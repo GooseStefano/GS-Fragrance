@@ -1,0 +1,217 @@
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-section {
+  padding: 0 80px 120px;
+}
+
+/* header */
+
+.reviews-header {
+  margin-bottom: 40px;
+}
+
+.reviews-header h2 {
+  font-size: 48px;
+
+  margin-bottom: 12px;
+}
+
+.reviews-header p {
+  opacity: 0.7;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.review-form {
+  padding: 32px;
+
+  margin-bottom: 50px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* textarea */
+
+.review-textarea {
+  width: 100%;
+
+  min-height: 180px;
+
+  resize: none;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+/* bottom */
+
+.review-form-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+/* stars */
+
+.review-stars {
+  font-size: 24px;
+
+  letter-spacing: 4px;
+
+  color: #ffc94d;
+}
+
+/* button */
+
+.review-submit-btn {
+  height: 56px;
+
+  padding: 0 28px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #009999, #00d4d4);
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.review-card {
+  padding: 32px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* top */
+
+.review-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+/* user */
+
+.review-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+/* avatar */
+
+.review-user img {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+/* name */
+
+.review-user h3 {
+  margin: 0 0 8px;
+}
+
+/* rating */
+
+.review-rating {
+  opacity: 0.7;
+}
+
+/* like */
+
+.review-like-btn {
+  height: 46px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: white;
+
+  cursor: pointer;
+}
+
+/* text */
+
+.review-text {
+  line-height: 1.9;
+
+  opacity: 0.82;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 0 20px 100px;
+  }
+
+  .review-form-bottom {
+    flex-direction: column;
+
+    gap: 20px;
+
+    align-items: flex-start;
+  }
+}

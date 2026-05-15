@@ -1,0 +1,151 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Каталог ароматов</title>
+
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <div class="page-transition">
+      <div id="navbar"></div>
+
+      <!-- =========================
+     HERO
+    ========================= -->
+
+      <section class="catalog-hero">
+        <div class="catalog-hero-overlay"></div>
+
+        <div class="catalog-hero-content">
+          <p class="catalog-subtitle">GooseStefano Fragrance Guide</p>
+
+          <h1>Каталог ароматов</h1>
+
+          <p class="catalog-description">
+            Исследуйте дизайнерские, нишевые и люксовые ароматы.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+      LAYOUT
+      ========================= -->
+
+      <section class="catalog-layout">
+        <!-- SIDEBAR -->
+
+        <aside class="filters-sidebar">
+          <h2>Фильтры</h2>
+
+          <!-- SEARCH -->
+
+          <div class="filter-block">
+            <input type="text" class="search-input" placeholder="Поиск..." />
+          </div>
+
+          <!-- BRANDS -->
+
+          <div class="filter-group">
+            <button class="filter-toggle">Бренды</button>
+
+            <div class="filter-content">
+              <label>
+                <input type="checkbox" value="Tom Ford" />
+
+                Tom Ford
+              </label>
+
+              <label>
+                <input type="checkbox" value="Dior" />
+
+                Dior
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+
+        <div class="catalog-content">
+          <div class="perfume-grid"></div>
+        </div>
+      </section>
+
+      <!-- =========================
+      MODAL
+      ========================= -->
+
+      <div class="perfume-modal-overlay">
+        <div class="perfume-modal">
+          <button class="modal-close">✕</button>
+
+          <!-- IMAGE -->
+
+          <div class="modal-image">
+            <img src="" alt="" id="modalPerfumeImage" />
+          </div>
+
+          <!-- CONTENT -->
+
+          <div class="modal-content">
+            <div class="modal-brand" id="modalPerfumeBrand"></div>
+
+            <h2 id="modalPerfumeName"></h2>
+
+            <div class="modal-rating" id="modalPerfumeRating"></div>
+
+            <p class="modal-description" id="modalPerfumeDescription"></p>
+
+            <div class="modal-tags" id="modalPerfumeTags"></div>
+
+            <div class="modal-actions">
+              <a href="" class="modal-main-btn"> Подробнее </a>
+
+              <button class="modal-secondary-btn">
+                ${isFavorite ? "♥" : "♡"} В избранное
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+         SEARCH OVERLAY
+        ========================= -->
+
+      <div class="search-overlay">
+        <div class="search-modal">
+          <!-- TOP -->
+
+          <div class="search-top">
+            <input
+              type="text"
+              class="global-search-input"
+              placeholder="
+        Найти аромат...
+        "
+            />
+
+            <button class="search-close">✕</button>
+          </div>
+
+          <!-- RESULTS -->
+
+          <div class="search-results"></div>
+        </div>
+      </div>
+
+      <script src="JS/navbar.js"></script>
+      <script src="JS/perfumes.js"></script>
+      <script src="JS/catalog.js"></script>
+      <script src="JS/search.js"></script>
+      <script src="JS/transitions.js"></script>
+    </div>
+  </body>
+</html>

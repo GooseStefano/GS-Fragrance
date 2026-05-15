@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Perfume</title>
+
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <div class="page-transition">
+      <div id="navbar"></div>
+
+      <section class="perfume-page">
+        <!-- IMAGE -->
+
+        <div class="perfume-page-image">
+          <img src="" alt="" id="perfumeImage" />
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="perfume-page-content">
+          <div class="perfume-page-brand" id="perfumeBrand"></div>
+
+          <h1 id="perfumeName"></h1>
+
+          <div class="perfume-page-rating" id="perfumeRating"></div>
+
+          <p class="perfume-page-description" id="perfumeDescription"></p>
+
+          <div class="perfume-page-tags" id="perfumeTags"></div>
+
+          <!-- NOTES -->
+
+          <div class="notes-section">
+            <h2>Ноты</h2>
+
+            <div class="notes-grid">
+              <div class="note-column">
+                <h3>Верхние</h3>
+
+                <div id="topNotes"></div>
+              </div>
+
+              <div class="note-column">
+                <h3>Средние</h3>
+
+                <div id="middleNotes"></div>
+              </div>
+
+              <div class="note-column">
+                <h3>Базовые</h3>
+
+                <div id="baseNotes"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACCORDS -->
+
+          <div class="accord-section">
+            <h2>Аккорды</h2>
+
+            <div id="accordBars"></div>
+          </div>
+
+          <!-- EXTRA INFO -->
+
+          <div class="perfume-extra-info">
+            <div class="info-card">
+              <h3>Сезон</h3>
+
+              <div id="seasonInfo"></div>
+            </div>
+
+            <div class="info-card">
+              <h3>Время суток</h3>
+
+              <div id="daytimeInfo"></div>
+            </div>
+
+            <div class="info-card">
+              <h3>Стойкость</h3>
+
+              <div id="longevityInfo"></div>
+            </div>
+
+            <div class="info-card">
+              <h3>Шлейф</h3>
+
+              <div id="sillageInfo"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+     SIMILAR PERFUMES
+    ========================= -->
+
+      <section class="similar-section">
+        <h2>Похожие ароматы</h2>
+
+        <div class="similar-grid"></div>
+      </section>
+
+      <!-- =========================
+     REVIEWS
+========================= -->
+
+      <section class="reviews-section">
+        <div class="reviews-header">
+          <h2>Отзывы</h2>
+
+          <p>Что люди думают об этом аромате</p>
+        </div>
+
+        <!-- REVIEW FORM -->
+
+        <div class="review-form">
+          <textarea
+            placeholder="
+      Поделитесь впечатлениями...
+      "
+            class="review-textarea"
+          ></textarea>
+
+          <div class="review-form-bottom">
+            <div class="review-stars">★★★★★</div>
+
+            <button class="review-submit-btn">Опубликовать</button>
+          </div>
+        </div>
+
+        <!-- REVIEWS LIST -->
+
+        <div class="reviews-list"></div>
+      </section>
+
+      <!-- =========================
+      SEARCH OVERLAY
+      ========================= -->
+
+      <div class="search-overlay">
+        <div class="search-modal">
+          <!-- TOP -->
+
+          <div class="search-top">
+            <input
+              type="text"
+              class="global-search-input"
+              placeholder="
+        Найти аромат...
+        "
+            />
+
+            <button class="search-close">✕</button>
+          </div>
+
+          <!-- RESULTS -->
+
+          <div class="search-results"></div>
+        </div>
+      </div>
+
+      <script src="JS/navbar.js"></script>
+      <script src="JS/perfumes.js"></script>
+      <script src="JS/perfume.js"></script>
+      <script src="JS/search.js"></script>
+      <script src="JS/transitions.js"></script>
+    </div>
+  </body>
+</html>

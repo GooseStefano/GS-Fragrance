@@ -1,0 +1,179 @@
+/* =========================
+   PAGE
+========================= */
+
+.favorites-page {
+  min-height: 100vh;
+
+  padding: 140px 80px 100px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.favorites-header {
+  margin-bottom: 70px;
+}
+
+.favorites-subtitle {
+  color: #009999;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.favorites-header h1 {
+  font-size: 72px;
+
+  margin-bottom: 20px;
+}
+
+.favorites-description {
+  opacity: 0.7;
+
+  font-size: 20px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.favorite-card {
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* hover */
+
+.favorite-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.favorite-image {
+  height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+}
+
+.favorite-image img {
+  width: 80%;
+
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.favorite-info {
+  padding: 24px;
+}
+
+.favorite-brand {
+  color: #009999;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+}
+
+.favorite-info h3 {
+  margin: 0 0 16px;
+
+  font-size: 28px;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.favorites-empty {
+  display: none;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 120px 20px;
+}
+
+.favorites-empty h2 {
+  font-size: 52px;
+
+  margin-bottom: 20px;
+}
+
+.favorites-empty p {
+  opacity: 0.7;
+
+  margin-bottom: 40px;
+}
+
+/* button */
+
+.favorites-catalog-btn {
+  height: 58px;
+
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #009999, #00d4d4);
+
+  color: white;
+
+  font-weight: 600;
+}

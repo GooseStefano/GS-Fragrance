@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0
+    "
+    />
+
+    <title>GS Fragrance Guide</title>
+
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+       PAGE TRANSITION
+  ========================= -->
+
+    <div class="page-transition">
+      <!-- =========================
+         NAVBAR
+    ========================= -->
+
+      <div id="navbar"></div>
+
+      <!-- =========================
+         SITE CONTENT
+    ========================= -->
+
+      <div class="site-content">
+        <!-- HERO -->
+
+        <section class="hero">
+          <h1>GS Fragrance Guide</h1>
+
+          <p>Откройте для себя мир ароматов</p>
+
+          <a href="#categories" class="arrow"> ↓ </a>
+        </section>
+
+        <!-- CATEGORIES -->
+
+        <section id="categories" class="categories">
+          <h2>Какие ароматы вас интересуют?</h2>
+
+          <div class="cards">
+            <a href="mens.html" class="card men">
+              <div class="card-content">
+                <h3>Мужские</h3>
+              </div>
+            </a>
+
+            <a href="unisex.html" class="card unisex">
+              <div class="card-content">
+                <h3>Унисекс</h3>
+              </div>
+            </a>
+
+            <a href="women.html" class="card women">
+              <div class="card-content">
+                <h3>Женские</h3>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-section">
+              <h3>Навигация</h3>
+
+              <a href="index.html"> Главная </a>
+
+              <a href="mens.html"> Мужские </a>
+
+              <a href="unisex.html"> Унисекс </a>
+
+              <a href="women.html"> Женские </a>
+            </div>
+
+            <div class="footer-section">
+              <h3>Контакты</h3>
+
+              <p>Email: danilamorozov190@gmail.com</p>
+
+              <p>Telegram: @GooseStefano</p>
+            </div>
+
+            <div class="footer-section">
+              <h3>О сайте</h3>
+
+              <p>GS Fragrance Guide — сайт о лучших ароматах.</p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2026 GS Fragrance Guide</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- =========================
+       SEARCH OVERLAY
+  ========================= -->
+
+    <div class="search-overlay">
+      <div class="search-modal">
+        <!-- TOP -->
+
+        <div class="search-top">
+          <input
+            type="text"
+            class="global-search-input"
+            placeholder="Найти аромат..."
+          />
+
+          <button class="search-close">✕</button>
+        </div>
+
+        <!-- RESULTS -->
+
+        <div class="search-results"></div>
+      </div>
+    </div>
+
+    <!-- =========================
+       AUTH OVERLAY
+  ========================= -->
+
+    <div class="auth-overlay">
+      <div class="auth-modal">
+        <!-- CLOSE -->
+
+        <button class="auth-close">✕</button>
+
+        <!-- LOGO -->
+
+        <div class="auth-logo">GS</div>
+
+        <!-- TABS -->
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Вход</button>
+
+          <button class="auth-tab" data-tab="register">Регистрация</button>
+        </div>
+
+        <!-- FORMS -->
+
+        <div class="auth-forms">
+          <!-- LOGIN -->
+
+          <form class="auth-form active" id="login-form">
+            <h2>С возвращением</h2>
+
+            <p>Войдите в свой аккаунт GS Fragrance</p>
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+              <input type="email" placeholder="Email" />
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+              <input
+                type="password"
+                placeholder="Пароль"
+                class="password-input"
+              />
+
+              <button type="button" class="password-toggle">
+                <!-- OPEN EYE -->
+
+                <svg
+                  class="eye-open"
+                  xmlns="
+                  http://www.w3.org/2000/svg
+                "
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="
+                    M2 12
+                    s3.5-6 10-6
+                    10 6 10 6
+                    -3.5 6-10 6
+                    -10-6-10-6Z
+                  "
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+
+                <!-- CLOSED EYE -->
+
+                <svg
+                  class="eye-closed"
+                  xmlns="
+                  http://www.w3.org/2000/svg
+                "
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M3 3l18 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+
+                  <path
+                    d="
+                    M10.6 10.5
+                    a3 3 0 0 0 4 4
+                  "
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit" class="auth-btn">Войти</button>
+          </form>
+
+          <!-- REGISTER -->
+
+          <form class="auth-form" id="register-form">
+            <h2>Создать аккаунт</h2>
+
+            <p>Присоединяйтесь к миру ароматов</p>
+
+            <!-- NAME -->
+
+            <div class="input-group">
+              <input type="text" placeholder="Имя" />
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+              <input type="email" placeholder="Email" />
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+              <input
+                type="password"
+                placeholder="Пароль"
+                class="password-input"
+              />
+
+              <button type="button" class="password-toggle">
+                <!-- OPEN EYE -->
+
+                <svg
+                  class="eye-open"
+                  xmlns="
+                  http://www.w3.org/2000/svg
+                "
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="
+                    M2 12
+                    s3.5-6 10-6
+                    10 6 10 6
+                    -3.5 6-10 6
+                    -10-6-10-6Z
+                  "
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+
+                <!-- CLOSED EYE -->
+
+                <svg
+                  class="eye-closed"
+                  xmlns="
+                  http://www.w3.org/2000/svg
+                "
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M3 3l18 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+
+                  <path
+                    d="
+                    M10.6 10.5
+                    a3 3 0 0 0 4 4
+                  "
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit" class="auth-btn">Зарегистрироваться</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================
+       NOTIFICATION
+  ========================= -->
+
+    <div class="notification"></div>
+
+    <!-- =========================
+       SCRIPTS
+  ========================= -->
+
+    <script src="JS/navbar.js"></script>
+
+    <script src="JS/script.js"></script>
+
+    <script src="JS/search.js"></script>
+
+    <script src="JS/auth.js"></script>
+
+    <script src="JS/transitions.js"></script>
+  </body>
+</html>

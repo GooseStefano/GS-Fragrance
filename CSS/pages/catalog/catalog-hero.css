@@ -1,0 +1,74 @@
+/* =========================
+   HERO
+========================= */
+
+.catalog-hero {
+  position: relative;
+
+  height: 34vh;
+
+  min-height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background-image: url("https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.catalog-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.8)
+  );
+
+  backdrop-filter: blur(6px);
+}
+
+.catalog-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+
+  padding: 20px;
+}
+
+.catalog-subtitle {
+  color: #009999;
+
+  font-size: 14px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.catalog-hero h1 {
+  font-size: 58px;
+
+  margin-bottom: 20px;
+}
+
+.catalog-description {
+  font-size: 20px;
+
+  opacity: 0.75;
+
+  line-height: 1.7;
+}

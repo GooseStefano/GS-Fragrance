@@ -1,0 +1,93 @@
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 10px);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes authFormShow {
+  0% {
+    opacity: 0;
+
+    transform: translateY(30px) scale(0.97);
+
+    filter: blur(14px);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+    filter: blur(0);
+  }
+}
+
+@keyframes buttonSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes authFormShow {
+  0% {
+    opacity: 0;
+
+    transform: translateY(30px) scale(0.97);
+
+    filter: blur(14px);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+    filter: blur(0);
+  }
+}
+
+/* =========================
+   PAGE TRANSITIONS
+========================= */
+
+.page-transition {
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* loaded */
+
+.page-transition.loaded {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* leaving */
+
+.page-transition.leaving {
+  opacity: 0;
+
+  transform: translateY(10px);
+}

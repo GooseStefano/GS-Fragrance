@@ -1,0 +1,51 @@
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .catalog-layout {
+    flex-direction: column;
+  }
+
+  .filters-sidebar {
+    width: 100%;
+
+    position: relative;
+
+    top: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .perfume-modal {
+    flex-direction: column;
+  }
+
+  .modal-image {
+    width: 100%;
+
+    min-height: 420px;
+  }
+
+  .modal-content {
+    padding: 50px 30px;
+  }
+
+  .modal-content h2 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-hero h1 {
+    font-size: 46px;
+  }
+
+  .catalog-description {
+    font-size: 16px;
+  }
+
+  .catalog-layout {
+    padding: 40px 20px;
+  }
+}

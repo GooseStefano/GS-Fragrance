@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Избранное</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="page-transition">
+      <div id="navbar"></div>
+
+      <!-- =========================
+      FAVORITES PAGE
+      ========================= -->
+
+      <section class="favorites-page">
+        <div class="favorites-header">
+          <p class="favorites-subtitle">GooseStefano Fragrance Guide</p>
+
+          <h1>Избранные ароматы</h1>
+
+          <p class="favorites-description">Ваша личная коллекция ароматов.</p>
+        </div>
+
+        <!-- GRID -->
+
+        <div class="favorites-grid"></div>
+
+        <!-- EMPTY -->
+
+        <div class="favorites-empty">
+          <h2>Пока пусто</h2>
+
+          <p>Добавьте ароматы в избранное.</p>
+
+          <a href="catalog.html" class="favorites-catalog-btn">
+            Перейти в каталог
+          </a>
+        </div>
+      </section>
+
+      <!-- =========================
+        SEARCH OVERLAY
+        ========================= -->
+
+      <div class="search-overlay">
+        <div class="search-modal">
+          <!-- TOP -->
+
+          <div class="search-top">
+            <input
+              type="text"
+              class="global-search-input"
+              placeholder="
+        Найти аромат...
+        "
+            />
+
+            <button class="search-close">✕</button>
+          </div>
+
+          <!-- RESULTS -->
+
+          <div class="search-results"></div>
+        </div>
+      </div>
+
+      <script src="JS/navbar.js"></script>
+      <script src="JS/perfumes.js"></script>
+      <script src="JS/favorites.js"></script>
+      <script src="JS/search.js"></script>
+      <script src="JS/transitions.js"></script>
+    </div>
+  </body>
+</html>

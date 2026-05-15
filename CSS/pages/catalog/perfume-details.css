@@ -1,0 +1,208 @@
+/* =========================
+   SECTIONS
+========================= */
+
+.notes-section,
+.accord-section{
+
+  margin-top:80px;
+}
+
+
+
+.notes-section h2,
+.accord-section h2{
+
+  font-size:36px;
+
+  margin-bottom:30px;
+}
+
+
+
+/* =========================
+   NOTES
+========================= */
+
+.notes-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:30px;
+}
+
+
+
+.note-column{
+
+  padding:30px;
+
+  border-radius:24px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+}
+
+
+
+.note-column h3{
+
+  margin-top:0;
+
+  margin-bottom:24px;
+}
+
+
+
+.note-tag{
+
+  display:inline-flex;
+
+  margin:
+    0 10px 10px 0;
+
+  padding:
+    10px 16px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  font-size:14px;
+}
+
+
+
+/* =========================
+   ACCORDS
+========================= */
+
+.accord-bar{
+
+  margin-bottom:28px;
+}
+
+
+
+.accord-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:12px;
+}
+
+
+
+.accord-track{
+
+  height:14px;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+
+
+.accord-fill{
+
+  height:100%;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #009999,
+      #00d4d4
+    );
+}
+
+
+
+/* =========================
+   INFO BLOCKS
+========================= */
+
+.perfume-extra-info{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:24px;
+
+  margin-top:80px;
+}
+
+
+
+.info-card{
+
+  padding:30px;
+
+  border-radius:24px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+}
+
+
+
+.info-card h3{
+
+  margin-top:0;
+
+  margin-bottom:20px;
+}
+
+
+
+.info-tag{
+
+  display:inline-flex;
+
+  padding:
+    10px 18px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:900px){
+
+  .notes-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .perfume-extra-info{
+
+    grid-template-columns:1fr;
+  }
+
+}

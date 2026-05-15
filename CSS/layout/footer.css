@@ -1,0 +1,76 @@
+.footer {
+  background: #111318;
+
+  color: white;
+
+  padding: 35px 40px 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* контейнер */
+
+.footer-container {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+/* секции */
+
+.footer-section {
+  max-width: 240px;
+}
+
+/* заголовки */
+
+.footer-section h3 {
+  font-size: 16px;
+
+  margin-bottom: 14px;
+}
+
+/* текст */
+
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  text-decoration: none;
+
+  margin-bottom: 8px;
+
+  display: block;
+
+  transition: 0.3s;
+}
+
+/* hover */
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+/* нижняя часть */
+
+.footer-bottom {
+  margin-top: 25px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  text-align: center;
+
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, 0.45);
+}
