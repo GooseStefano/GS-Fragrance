@@ -1,12 +1,34 @@
 :root {
-  --bg-color: #0f1115;
-  --text-color: #ffffff;
-  --card-bg: #1a1d24;
-  --accent: #009999;
+  --bg-color: #08090d;
+  --text-color: #f7f2ea;
+  --card-bg: #151821;
+  --accent: #c9a45c;
+  --accent-soft: rgba(201, 164, 92, 0.16);
+  --muted-color: #a9a49b;
+  --navbar-bg: rgba(8, 9, 13, 0.58);
+  --navbar-bg-scrolled: rgba(8, 9, 13, 0.82);
+  --navbar-border: rgba(255, 255, 255, 0.08);
+  --nav-control-bg: rgba(255, 255, 255, 0.06);
+  --nav-control-hover: rgba(255, 255, 255, 0.11);
+  --nav-pill-hover: rgba(255, 255, 255, 0.07);
+  --navbar-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+  --focus-ring: rgba(231, 200, 121, 0.9);
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body.light {
-  --bg-color: #ffffff;
-  --text-color: #111111;
-  --card-bg: #f2f2f2;
+  --bg-color: #f7f2ea;
+  --text-color: #141210;
+  --card-bg: #ffffff;
+  --accent: #9b7033;
+  --accent-soft: rgba(155, 112, 51, 0.14);
+  --muted-color: #625a50;
+  --navbar-bg: rgba(255, 252, 245, 0.68);
+  --navbar-bg-scrolled: rgba(255, 252, 245, 0.9);
+  --navbar-border: rgba(20, 18, 16, 0.1);
+  --nav-control-bg: rgba(20, 18, 16, 0.06);
+  --nav-control-hover: rgba(20, 18, 16, 0.1);
+  --nav-pill-hover: rgba(20, 18, 16, 0.06);
+  --navbar-shadow: 0 18px 55px rgba(72, 52, 28, 0.16);
+  --focus-ring: rgba(155, 112, 51, 0.78);
 }

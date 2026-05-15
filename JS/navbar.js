@@ -4,304 +4,280 @@
 
 const navbar = document.querySelector("#navbar");
 
-/* =========================
-   FAVORITES COUNT
-========================= */
+const navItems = [
+  {
+    href: "index.html",
+    label: "Главная",
+  },
+  {
+    href: "catalog.html",
+    label: "Каталог",
+  },
+  {
+    href: "favorites.html",
+    label: "Избранное",
+    hasCounter: true,
+  },
+];
 
-const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+function getFavorites() {
+  try {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
-/* =========================
-   CURRENT PAGE
-========================= */
+    return Array.isArray(savedFavorites) ? savedFavorites : [];
+  } catch {
+    return [];
+  }
+}
 
-const currentPage = window.location.pathname.split("/").pop();
+function getCurrentPage() {
+  return window.location.pathname.split("/").pop() || "index.html";
+}
 
-/* =========================
-   RENDER
-========================= */
+const favorites = getFavorites();
+const currentPage = getCurrentPage();
+
+function getLinkClass(item, baseClass) {
+  const isActive = item.href === currentPage;
+
+  return `${baseClass}${isActive ? " active" : ""}`;
+}
+
+function getAriaCurrent(item) {
+  return item.href === currentPage ? ' aria-current="page"' : "";
+}
+
+function getCounterMarkup(item) {
+  if (!item.hasCounter) {
+    return "";
+  }
+
+  return `<span class="favorites-count" aria-label="В избранном ${favorites.length}">
+    ${favorites.length}
+  </span>`;
+}
+
+function renderNavLinks(baseClass) {
+  return navItems
+    .map(
+      (item) => `
+        <a
+          href="${item.href}"
+          class="${getLinkClass(item, baseClass)}"
+          ${getAriaCurrent(item)}
+        >
+          <span>${item.label}</span>
+          ${getCounterMarkup(item)}
+        </a>
+      `,
+    )
+    .join("");
+}
 
 navbar.innerHTML = `
-
-<nav class="navbar">
-
-  <!-- LOGO -->
-
-  <a
-    href="index.html"
-    class="navbar-logo"
-  >
-
-    GS
-
-  </a>
-
-
-
-  <!-- CENTER -->
-
-  <div class="navbar-center">
-
-
-
+  <nav class="navbar" aria-label="Главная навигация">
     <a
       href="index.html"
-
-      class="
-        nav-pill
-
-        ${currentPage === "index.html" || currentPage === "" ? "active" : ""}
-      "
+      class="navbar-logo"
+      aria-label="На главную страницу GS Fragrance Guide"
     >
-
-      Главная
-
+      <span class="navbar-logo-mark">GS</span>
+      <span class="navbar-logo-text">Fragrance Guide</span>
     </a>
 
+    <div class="navbar-center">
+      ${renderNavLinks("nav-pill")}
+    </div>
 
+    <div class="navbar-actions">
+      <button
+        class="icon-btn search-btn"
+        type="button"
+        aria-label="Открыть поиск"
+      >
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="16.5" y1="16.5" x2="22" y2="22" />
+        </svg>
+      </button>
 
-    <a
-      href="catalog.html"
+      <button
+        class="theme-switch"
+        type="button"
+        aria-label="Включить светлую тему"
+        aria-pressed="false"
+      >
+        <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <g stroke-width="2">
+            <line x1="12" y1="2" x2="12" y2="5" />
+            <line x1="12" y1="19" x2="12" y2="22" />
+            <line x1="2" y1="12" x2="5" y2="12" />
+            <line x1="19" y1="12" x2="22" y2="12" />
+            <line x1="4.2" y1="4.2" x2="6.5" y2="6.5" />
+            <line x1="17.5" y1="17.5" x2="19.8" y2="19.8" />
+            <line x1="4.2" y1="19.8" x2="6.5" y2="17.5" />
+            <line x1="17.5" y1="6.5" x2="19.8" y2="4.2" />
+          </g>
+        </svg>
 
-      class="
-        nav-pill
+        <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="
+              M21 12.8
+              A9 9 0 0 1 11.2 3
+              7 7 0 1 0 21 12.8z
+            "
+          />
+        </svg>
 
-        ${currentPage === "catalog.html" ? "active" : ""}
-      "
+        <span class="switch-circle" aria-hidden="true"></span>
+      </button>
+
+      <button
+        class="icon-btn profile-btn"
+        type="button"
+        aria-label="Открыть профиль"
+      >
+        <img class="avatar" src="" alt="Аватар пользователя" />
+
+        <svg class="icon default-user" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c2-4 14-4 16 0" />
+        </svg>
+      </button>
+
+      <button
+        class="icon-btn menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div
+      class="mobile-menu"
+      id="mobile-navigation"
+      aria-hidden="true"
     >
-
-      Каталог
-
-    </a>
-
-
-
-    <a
-      href="favorites.html"
-
-      class="
-        nav-pill
-
-        ${currentPage === "favorites.html" ? "active" : ""}
-      "
-    >
-
-      Избранное
-
-
-
-      <span class="favorites-count">
-
-        ${favorites.length}
-
-      </span>
-
-    </a>
-
-  </div>
-
-
-
-  <!-- ACTIONS -->
-
-  <div class="navbar-actions">
-
-
-
-    <!-- SEARCH -->
-
-<button class="icon-btn search-btn">
-
-  <svg
-    viewBox="0 0 24 24"
-    class="icon"
-  >
-
-    <circle
-      cx="11"
-      cy="11"
-      r="7"
-    />
-
-    <line
-      x1="16.5"
-      y1="16.5"
-      x2="22"
-      y2="22"
-    />
-
-  </svg>
-
-</button>
-
-
-
-    <!-- THEME -->
-
-<button class="theme-switch">
-      
-  <!-- SUN -->
-
-  <svg
-    class="icon sun"
-    viewBox="0 0 24 24"
-  >
-
-    <circle
-      cx="12"
-      cy="12"
-      r="4"
-    />
-
-    <g stroke-width="2">
-
-      <line
-        x1="12"
-        y1="2"
-        x2="12"
-        y2="5"
-      />
-
-      <line
-        x1="12"
-        y1="19"
-        x2="12"
-        y2="22"
-      />
-
-      <line
-        x1="2"
-        y1="12"
-        x2="5"
-        y2="12"
-      />
-
-      <line
-        x1="19"
-        y1="12"
-        x2="22"
-        y2="12"
-      />
-
-      <line
-        x1="4.2"
-        y1="4.2"
-        x2="6.5"
-        y2="6.5"
-      />
-
-      <line
-        x1="17.5"
-        y1="17.5"
-        x2="19.8"
-        y2="19.8"
-      />
-
-      <line
-        x1="4.2"
-        y1="19.8"
-        x2="6.5"
-        y2="17.5"
-      />
-
-      <line
-        x1="17.5"
-        y1="6.5"
-        x2="19.8"
-        y2="4.2"
-      />
-
-    </g>
-
-  </svg>
-
-
-
-  <!-- MOON -->
-
-  <svg
-    class="icon moon"
-    viewBox="0 0 24 24"
-  >
-
-    <path
-      d="
-      M21 12.8
-      A9 9 0 0 1 11.2 3
-      7 7 0 1 0 21 12.8z
-      "
-    />
-
-  </svg>
-
-
-
-  <!-- SWITCH -->
-
-  <div class="switch-circle"></div>
-
-</button>
-
-
-
-    <!-- PROFILE -->
-
-<button
-  class="
-    icon-btn
-    profile-btn
-  "
->
-
-  <img
-    class="avatar"
-    src=""
-    alt=""
-  >
-
-
-
-  <svg
-    class="
-      icon
-      default-user
-    "
-
-    viewBox="0 0 24 24"
-  >
-
-    <circle
-      cx="12"
-      cy="8"
-      r="4"
-    />
-
-    <path
-      d="
-      M4 20
-      c2-4 14-4 16 0
-      "
-    />
-
-  </svg>
-
-</button>
-
-  </div>
-
-</nav>
-
+      ${renderNavLinks("mobile-menu-link")}
+    </div>
+  </nav>
+
+  <div class="mobile-nav-backdrop" aria-hidden="true"></div>
 `;
+
+/* =========================
+   THEME
+========================= */
+
+const themeSwitch = document.querySelector(".theme-switch");
+
+function applyTheme(theme) {
+  const isLight = theme === "light";
+
+  document.body.classList.toggle("light", isLight);
+
+  themeSwitch.setAttribute("aria-pressed", String(isLight));
+  themeSwitch.setAttribute(
+    "aria-label",
+    isLight ? "Включить темную тему" : "Включить светлую тему",
+  );
+}
+
+const savedTheme = localStorage.getItem("theme") === "light" ? "light" : "dark";
+
+applyTheme(savedTheme);
+
+themeSwitch.addEventListener("click", () => {
+  const nextTheme = document.body.classList.contains("light") ? "dark" : "light";
+
+  localStorage.setItem("theme", nextTheme);
+  applyTheme(nextTheme);
+});
+
+/* =========================
+   AVATAR
+========================= */
+
+const savedAvatar = localStorage.getItem("avatar");
+const profileBtn = document.querySelector(".profile-btn");
+const avatar = profileBtn.querySelector(".avatar");
+
+if (savedAvatar) {
+  avatar.src = savedAvatar;
+  profileBtn.classList.add("logged");
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const navbarElement = document.querySelector(".navbar");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+const mobileBackdrop = document.querySelector(".mobile-nav-backdrop");
+const desktopMedia = window.matchMedia("(min-width: 901px)");
+
+function setMobileMenu(isOpen) {
+  navbarElement.classList.toggle("menu-open", isOpen);
+  document.body.classList.toggle("nav-lock", isOpen);
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+
+  mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+  mobileBackdrop.classList.toggle("active", isOpen);
+
+  mobileMenuLinks.forEach((link) => {
+    link.tabIndex = isOpen ? 0 : -1;
+  });
+}
+
+setMobileMenu(false);
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navbarElement.classList.contains("menu-open");
+
+  setMobileMenu(!isOpen);
+});
+
+mobileBackdrop.addEventListener("click", () => {
+  setMobileMenu(false);
+});
+
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    setMobileMenu(false);
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMobileMenu(false);
+  }
+});
+
+desktopMedia.addEventListener("change", (event) => {
+  if (event.matches) {
+    setMobileMenu(false);
+  }
+});
 
 /* =========================
    SCROLL EFFECT
 ========================= */
 
-const navbarElement = document.querySelector(".navbar");
+function updateNavbarOnScroll() {
+  navbarElement.classList.toggle("scrolled", window.scrollY > 40);
+}
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 40) {
-    navbarElement.classList.add("scrolled");
-  } else {
-    navbarElement.classList.remove("scrolled");
-  }
-});
+updateNavbarOnScroll();
+
+window.addEventListener("scroll", updateNavbarOnScroll);
