@@ -31,9 +31,9 @@
 /* focus */
 
 .input-group input:focus {
-  border: 1px solid #009999;
+  border: 1px solid var(--accent);
 
-  box-shadow: 0 0 20px rgba(0, 153, 153, 0.2);
+  box-shadow: 0 0 20px var(--accent-soft);
 }
 
 /* placeholder */
@@ -85,9 +85,9 @@ body.light .input-group input::placeholder {
 }
 
 .input-group input:focus {
-  border: 1px solid #009999;
+  border: 1px solid var(--accent);
 
-  box-shadow: 0 0 20px rgba(0, 153, 153, 0.2);
+  box-shadow: 0 0 20px var(--accent-soft);
 }
 
 .input-group input::placeholder {

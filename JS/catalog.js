@@ -152,6 +152,8 @@ function renderPerfumes(data) {
     const favoriteBtn = card.querySelector(".favorite-btn");
 
     if (isFavorite) {
+      favoriteBtn.textContent = "♥";
+
       favoriteBtn.classList.add("active");
     }
 

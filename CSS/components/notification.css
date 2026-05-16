@@ -38,7 +38,7 @@
 /* success */
 
 .notification.success {
-  box-shadow: 0 10px 35px rgba(0, 153, 153, 0.35);
+  box-shadow: 0 10px 35px var(--accent-glow);
 }
 
 /* error */

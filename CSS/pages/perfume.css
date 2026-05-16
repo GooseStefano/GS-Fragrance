@@ -69,7 +69,7 @@
 
 .perfume-page-brand{
 
-  color:#009999;
+  color:var(--accent);
 
   font-size:14px;
 

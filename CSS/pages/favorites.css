@@ -17,7 +17,7 @@
 }
 
 .favorites-subtitle {
-  color: #009999;
+  color: var(--accent);
 
   letter-spacing: 3px;
 
@@ -61,11 +61,11 @@
 
   text-decoration: none;
 
-  color: white;
+  color: var(--text-color);
 
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-soft);
 
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--surface-border);
 
   transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -109,7 +109,7 @@
 }
 
 .favorite-brand {
-  color: #009999;
+  color: var(--accent);
 
   font-size: 14px;
 
@@ -171,7 +171,7 @@
 
   text-decoration: none;
 
-  background: linear-gradient(135deg, #009999, #00d4d4);
+  background: var(--accent-gradient);
 
   color: white;
 

@@ -211,7 +211,7 @@
    ICON BUTTONS
 ========================= */
 
-.icon-btn {
+.navbar .icon-btn {
   width: 46px;
   height: 46px;
   display: flex;
@@ -230,10 +230,20 @@
 
 /* hover */
 
-.icon-btn:hover {
+.navbar .icon-btn:hover {
   transform: translateY(-1px);
   background: var(--nav-control-hover);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+body.light .navbar .icon-btn {
+  background: var(--nav-control-bg);
+
+  border: none;
+}
+
+body.light .navbar .icon-btn:hover {
+  background: var(--nav-control-hover);
 }
 
 /* =========================

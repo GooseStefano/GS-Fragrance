@@ -29,7 +29,7 @@
 
   margin-top: 10px;
 
-  background: linear-gradient(135deg, #009999, #00c2c2);
+  background: var(--accent-gradient);
 
   color: white;
 
@@ -79,7 +79,7 @@
 
   margin-top: 10px;
 
-  background: linear-gradient(135deg, #009999, #00c2c2);
+  background: var(--accent-gradient);
 
   color: white;
 
@@ -94,7 +94,7 @@
 .auth-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 15px 30px rgba(0, 153, 153, 0.35);
+  box-shadow: 0 15px 30px var(--accent-glow);
 }
 
 .password-toggle {
@@ -135,9 +135,9 @@
 }
 
 .password-toggle:hover {
-  background: rgba(0, 153, 153, 0.12);
+  background: var(--accent-soft);
 
-  color: #00c2c2;
+  color: var(--accent-strong);
 }
 
 .password-toggle.active .eye-open {
@@ -194,7 +194,7 @@
 .auth-submit:hover {
   transform: translateY(-3px);
 
-  box-shadow: 0 14px 40px rgba(0, 153, 153, 0.28);
+  box-shadow: 0 14px 40px var(--accent-glow);
 }
 
 /* click */

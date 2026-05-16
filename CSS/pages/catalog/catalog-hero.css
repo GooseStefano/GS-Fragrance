@@ -48,7 +48,7 @@
 }
 
 .catalog-subtitle {
-  color: #009999;
+  color: var(--accent-strong);
 
   font-size: 14px;
 

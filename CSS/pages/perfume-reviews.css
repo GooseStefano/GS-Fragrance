@@ -93,7 +93,7 @@
 
   border-radius: 18px;
 
-  background: linear-gradient(135deg, #009999, #00d4d4);
+  background: var(--accent-gradient);
 
   color: white;
 

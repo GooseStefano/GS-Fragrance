@@ -135,7 +135,7 @@
 
   background: radial-gradient(
     circle at center,
-    rgba(0, 153, 153, 0.12),
+    var(--accent-soft),
     transparent 70%
   );
 }
@@ -169,7 +169,7 @@
 /* brand */
 
 .modal-brand {
-  color: #009999;
+  color: var(--accent);
 
   font-size: 14px;
 
@@ -259,7 +259,7 @@
 
   border-radius: 18px;
 
-  background: linear-gradient(135deg, #009999, #00c2c2);
+  background: var(--accent-gradient);
 
   color: white;
 
@@ -276,7 +276,7 @@
 .modal-main-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 10px 30px rgba(0, 153, 153, 0.35);
+  box-shadow: 0 10px 30px var(--accent-glow);
 }
 
 /* secondary */
