@@ -5,9 +5,13 @@
 .catalog-hero {
   position: relative;
 
-  height: 34vh;
+  height: auto;
 
-  min-height: 280px;
+  min-height: 420px;
+
+  padding: 150px 24px 86px;
+
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
@@ -57,18 +61,40 @@
   text-transform: uppercase;
 
   margin-bottom: 20px;
+
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
 }
 
 .catalog-hero h1 {
   font-size: 58px;
 
+  color: #f7f2ea;
+
   margin-bottom: 20px;
+
+  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
 }
 
 .catalog-description {
   font-size: 20px;
 
+  color: rgba(247, 242, 234, 0.82);
+
   opacity: 0.75;
 
   line-height: 1.7;
+
+  text-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 768px) {
+  .catalog-hero {
+    min-height: 390px;
+
+    padding: 130px 18px 70px;
+  }
+
+  .catalog-hero h1 {
+    font-size: 44px;
+  }
 }
