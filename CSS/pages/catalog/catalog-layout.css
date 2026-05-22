@@ -26,12 +26,73 @@
    GRID
 ========================= */
 
+.catalog-results-meta {
+  margin: 0 0 24px;
+
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.catalog-results-shell {
+  position: relative;
+
+  min-height: 420px;
+}
+
 .perfume-grid {
   display: grid;
 
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
-  gap: 30px;
+  gap: 22px;
+}
 
-  min-height: 600px;
+@media (min-width: 1500px) {
+  .perfume-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.perfume-grid[hidden] {
+  display: none !important;
+}
+
+.catalog-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  position: absolute;
+  inset: 0;
+
+  padding: 48px 24px;
+
+  border-radius: 28px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.catalog-empty[hidden] {
+  display: none !important;
+}
+
+.catalog-empty-title {
+  margin: 0;
+
+  font-size: 28px;
+}
+
+.catalog-empty-text {
+  margin: 0;
+  max-width: 360px;
+
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
 }

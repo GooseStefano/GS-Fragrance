@@ -1,5 +1,5 @@
 /* =========================
-   SIDEBAR
+   SIDEBAR SHELL
 ========================= */
 
 .filters-sidebar {
@@ -11,9 +11,14 @@
 
   top: 120px;
 
-  height: fit-content;
+  align-self: flex-start;
+}
 
-  padding: 30px;
+.filters-sidebar-panel {
+  display: flex;
+  flex-direction: column;
+
+  max-height: calc(100dvh - 140px);
 
   border-radius: 28px;
 
@@ -22,6 +27,53 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
 
   backdrop-filter: blur(20px);
+
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+
+  overflow: hidden;
+}
+
+.filters-sidebar-scroll {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  padding: 30px 30px 12px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  overscroll-behavior: contain;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filters-sidebar-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.filters-sidebar-footer {
+  flex-shrink: 0;
+
+  padding: 16px 30px 30px;
+
+  border-top: 1px solid var(--surface-border);
+
+  background: linear-gradient(
+    180deg,
+    rgba(8, 9, 13, 0.72) 0%,
+    rgba(8, 9, 13, 0.96) 40%
+  );
+}
+
+body.light .filters-sidebar-footer {
+  background: linear-gradient(
+    180deg,
+    rgba(247, 242, 234, 0.72) 0%,
+    rgba(247, 242, 234, 0.98) 40%
+  );
 }
 
 .filters-sidebar h2 {
@@ -35,6 +87,10 @@
 /* =========================
    SEARCH
 ========================= */
+
+.filter-block {
+  margin-bottom: 8px;
+}
 
 .search-input {
   width: 100%;
@@ -70,8 +126,16 @@
    FILTERS
 ========================= */
 
+.catalog-filters {
+  margin-top: 8px;
+}
+
 .filter-group {
   margin-top: 28px;
+}
+
+.filter-group:first-child {
+  margin-top: 0;
 }
 
 .filter-toggle {
@@ -92,56 +156,177 @@
 
   cursor: pointer;
 
-  transition: 0.35s;
+  transition: 0.35s var(--ease-luxury);
 }
 
 .filter-toggle:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.filter-toggle[aria-expanded="true"] {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
 /* =========================
-   ACCORDION
+   ACCORDION (точная высота контента)
 ========================= */
 
 .filter-content {
-  display: flex;
-  flex-direction: column;
-
-  gap: 14px;
-
   max-height: 0;
 
   overflow: hidden;
 
-  opacity: 0;
-
-  transition:
-    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.35s ease,
-    padding 0.35s ease;
-
-  padding: 0 8px;
+  transition: max-height 0.4s var(--ease-luxury);
 }
 
-/* active */
+.filter-content-inner {
+  display: flex;
+  flex-direction: column;
 
-.filter-content.active {
-  max-height: 300px;
+  gap: 8px;
 
-  opacity: 1;
-
-  padding: 18px 8px 0;
+  padding: 0 4px;
 }
 
-/* labels */
+.filter-content.active .filter-content-inner {
+  padding: 16px 4px 4px;
+}
 
-.filter-content label {
+/* =========================
+   CUSTOM CHECKBOXES
+========================= */
+
+.filter-option {
   display: flex;
   align-items: center;
+  gap: 14px;
 
-  gap: 12px;
+  padding: 10px 12px;
+
+  border-radius: 14px;
 
   cursor: pointer;
 
-  opacity: 0.8;
+  color: var(--text-color);
+
+  transition: background 0.3s var(--ease-luxury);
+}
+
+.filter-option:hover {
+  background: var(--surface-hover);
+}
+
+.filter-option input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+.filter-option-box {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  transition:
+    background 0.35s var(--ease-luxury),
+    border-color 0.35s var(--ease-luxury),
+    box-shadow 0.35s var(--ease-luxury),
+    transform 0.35s var(--ease-luxury);
+}
+
+.filter-option-text {
+  line-height: 1.35;
+}
+
+.filter-option input:checked + .filter-option-box {
+  background: var(--accent-gradient);
+
+  border-color: transparent;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 10px 24px var(--accent-glow);
+
+  transform: scale(1.02);
+}
+
+.filter-option input:checked + .filter-option-box::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 48%;
+
+  width: 5px;
+  height: 9px;
+
+  border: 2px solid #141210;
+  border-top: 0;
+  border-left: 0;
+
+  transform: translate(-50%, -58%) rotate(45deg);
+}
+
+.filter-option input:focus-visible + .filter-option-box {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+body.light .filter-option-box {
+  background: rgba(20, 18, 16, 0.04);
+  border-color: rgba(20, 18, 16, 0.16);
+}
+
+/* =========================
+   RESET
+========================= */
+
+.filter-reset-btn {
+  width: 100%;
+  height: 52px;
+  margin: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: var(--text-color);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+}
+
+.filter-reset-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
 }

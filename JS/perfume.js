@@ -230,7 +230,7 @@ if (perfume) {
    REVIEWS
 ========================= */
 
-  perfume.reviews.forEach((review) => {
+  (perfume.reviews || []).forEach((review) => {
     const card = document.createElement("div");
 
     card.classList.add("review-card");

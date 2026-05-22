@@ -41,31 +41,26 @@
         <!-- SIDEBAR -->
 
         <aside class="filters-sidebar">
-          <h2>Фильтры</h2>
+          <div class="filters-sidebar-panel">
+            <div class="filters-sidebar-scroll">
+              <h2>Фильтры</h2>
 
-          <!-- SEARCH -->
+              <div class="filter-block">
+                <input
+                  type="search"
+                  class="search-input"
+                  placeholder="Поиск по названию, бренду, нотам..."
+                  autocomplete="off"
+                />
+              </div>
 
-          <div class="filter-block">
-            <input type="text" class="search-input" placeholder="Поиск..." />
-          </div>
+              <div id="catalog-filters" class="catalog-filters"></div>
+            </div>
 
-          <!-- BRANDS -->
-
-          <div class="filter-group">
-            <button class="filter-toggle">Бренды</button>
-
-            <div class="filter-content">
-              <label>
-                <input type="checkbox" value="Tom Ford" />
-
-                Tom Ford
-              </label>
-
-              <label>
-                <input type="checkbox" value="Dior" />
-
-                Dior
-              </label>
+            <div class="filters-sidebar-footer">
+              <button type="button" class="filter-reset-btn">
+                Сбросить фильтры
+              </button>
             </div>
           </div>
         </aside>
@@ -73,7 +68,18 @@
         <!-- CONTENT -->
 
         <div class="catalog-content">
-          <div class="perfume-grid"></div>
+          <p class="catalog-results-meta" aria-live="polite"></p>
+
+          <div class="catalog-results-shell">
+            <div class="perfume-grid"></div>
+
+            <div class="catalog-empty" hidden>
+              <p class="catalog-empty-title">Ничего не найдено</p>
+              <p class="catalog-empty-text">
+                Попробуйте изменить запрос или сбросить фильтры.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -141,12 +147,13 @@
         </div>
       </div>
 
-      <script src="JS/navbar.js"></script>
-      <script src="JS/perfumes.js"></script>
-      <script src="JS/catalog.js"></script>
-      <script src="JS/search.js"></script>
-      <script src="JS/auth.js"></script>
-      <script src="JS/transitions.js"></script>
+      <script src="JS/perfumes.js" defer></script>
+      <script src="JS/utils/perfume-filters.js" defer></script>
+      <script src="JS/catalog.js" defer></script>
+      <script type="module" src="JS/main.js"></script>
+      <script src="JS/search.js" defer></script>
+      <script src="JS/auth.js" defer></script>
+      <script src="JS/transitions.js" defer></script>
     </div>
   </body>
 </html>

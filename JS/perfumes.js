@@ -1,124 +1,255 @@
 const perfumes = [
   {
     id: 1,
-
     brand: "Tom Ford",
-
     name: "Oud Wood",
-
     image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56737.2x.avif",
-
     description: "Тёплый древесный аромат с мягким удом и сливочной ванилью.",
-
     rating: 9.1,
-
+    gender: "unisex",
+    concentration: "EDP",
     accords: ["Woody", "Warm spicy", "Luxury"],
-
     topNotes: ["Cardamom", "Pepper"],
-
     middleNotes: ["Oud", "Sandalwood"],
-
     baseNotes: ["Vanilla", "Amber"],
-
     accordBars: [
-      {
-        name: "Woody",
-        strength: 90,
-      },
-
-      {
-        name: "Warm spicy",
-        strength: 75,
-      },
-
-      {
-        name: "Sweet",
-        strength: 40,
-      },
+      { name: "Woody", strength: 90 },
+      { name: "Warm spicy", strength: 75 },
+      { name: "Sweet", strength: 40 },
     ],
-
     season: ["Winter", "Autumn"],
-
     daytime: ["Night"],
-
-    performance: {
-      longevity: "8-10h",
-
-      sillage: "Strong",
-    },
-
+    performance: { longevity: "8-10h", sillage: "Strong" },
     category: ["woody"],
-
     reviews: [
       {
         user: "Alex",
-
         avatar: "https://i.pravatar.cc/150?img=12",
-
         rating: 9,
-
         text: "Очень тёплый и дорогой аромат. Идеален для осени.",
-
         likes: 24,
       },
-
       {
         user: "Daniel",
-
         avatar: "https://i.pravatar.cc/150?img=15",
-
         rating: 8,
-
         text: "Мягкий уд без агрессии. Очень luxury vibe.",
-
         likes: 12,
       },
     ],
   },
-
   {
     id: 2,
-
     brand: "Jean Paul Gaultier",
-
     name: "Le Beau",
-
     image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.55785.2x.avif",
-
     description: "Свежий сладкий летний аромат с кокосом и тонкой сладостью.",
-
     rating: 8.7,
-
+    gender: "men",
+    concentration: "EDT",
     accords: ["Sweet", "Fresh", "Summer"],
-
     topNotes: ["Bergamot"],
-
     middleNotes: ["Coconut"],
-
     baseNotes: ["Tonka Bean"],
-
     accordBars: [
-      {
-        name: "Sweet",
-        strength: 80,
-      },
-
-      {
-        name: "Fresh",
-        strength: 70,
-      },
+      { name: "Sweet", strength: 80 },
+      { name: "Fresh", strength: 70 },
     ],
-
     season: ["Summer", "Spring"],
-
     daytime: ["Day"],
-
-    performance: {
-      longevity: "6-8h",
-
-      sillage: "Medium",
-    },
-
+    performance: { longevity: "6-8h", sillage: "Medium" },
     category: ["sweet"],
+    reviews: [],
+  },
+  {
+    id: 3,
+    brand: "Dior",
+    name: "Sauvage",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.2x.avif",
+    description:
+      "Свежий пряный аромат с бергамотом, амброксаном и древесной базой.",
+    rating: 8.9,
+    gender: "men",
+    concentration: "EDT",
+    accords: ["Fresh spicy", "Aromatic", "Citrus"],
+    topNotes: ["Bergamot", "Pepper"],
+    middleNotes: ["Lavender", "Geranium"],
+    baseNotes: ["Ambroxan", "Cedar"],
+    accordBars: [
+      { name: "Fresh spicy", strength: 85 },
+      { name: "Aromatic", strength: 70 },
+    ],
+    season: ["Spring", "Summer"],
+    daytime: ["Day", "Night"],
+    performance: { longevity: "7-9h", sillage: "Strong" },
+    category: ["fresh"],
+    reviews: [],
+  },
+  {
+    id: 4,
+    brand: "Chanel",
+    name: "No. 5",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.38269.2x.avif",
+    description:
+      "Классический цветочный aldehydic аромат — икона женской парфюмерии.",
+    rating: 9.0,
+    gender: "women",
+    concentration: "EDP",
+    accords: ["Floral", "Powdery", "Aldehydic"],
+    topNotes: ["Aldehydes", "Neroli"],
+    middleNotes: ["Rose", "Jasmine"],
+    baseNotes: ["Vanilla", "Sandalwood"],
+    accordBars: [
+      { name: "Floral", strength: 90 },
+      { name: "Powdery", strength: 75 },
+    ],
+    season: ["Autumn", "Winter"],
+    daytime: ["Day", "Night"],
+    performance: { longevity: "8-10h", sillage: "Moderate" },
+    category: ["floral"],
+    reviews: [],
+  },
+  {
+    id: 5,
+    brand: "Yves Saint Laurent",
+    name: "Libre",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.55883.2x.avif",
+    description:
+      "Современный лавандовый цветочный аромат с ванилью и чувственной базой.",
+    rating: 8.6,
+    gender: "women",
+    concentration: "EDP",
+    accords: ["Floral", "Aromatic", "Vanilla"],
+    topNotes: ["Lavender", "Mandarin"],
+    middleNotes: ["Orange Blossom", "Jasmine"],
+    baseNotes: ["Vanilla", "Ambergris"],
+    accordBars: [
+      { name: "Floral", strength: 80 },
+      { name: "Vanilla", strength: 65 },
+    ],
+    season: ["Spring", "Autumn"],
+    daytime: ["Day", "Night"],
+    performance: { longevity: "7-9h", sillage: "Strong" },
+    category: ["floral"],
+    reviews: [],
+  },
+  {
+    id: 6,
+    brand: "Maison Francis Kurkdjian",
+    name: "Baccarat Rouge 540",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.2x.avif",
+    description:
+      "Сияющий амбровый аромат с шафраном, жасмином и карамельной сладостью.",
+    rating: 9.3,
+    gender: "unisex",
+    concentration: "EDP",
+    accords: ["Amber", "Woody", "Sweet"],
+    topNotes: ["Saffron", "Jasmine"],
+    middleNotes: ["Amberwood", "Ambergris"],
+    baseNotes: ["Cedar", "Fir Resin"],
+    accordBars: [
+      { name: "Amber", strength: 95 },
+      { name: "Sweet", strength: 70 },
+    ],
+    season: ["Autumn", "Winter"],
+    daytime: ["Night"],
+    performance: { longevity: "10-12h", sillage: "Strong" },
+    category: ["amber"],
+    reviews: [],
+  },
+  {
+    id: 7,
+    brand: "Creed",
+    name: "Aventus",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9828.2x.avif",
+    description:
+      "Фруктово-дымный аромат с ананасом, берёзой и мускусной глубиной.",
+    rating: 9.2,
+    gender: "men",
+    concentration: "EDP",
+    accords: ["Fruity", "Smoky", "Woody"],
+    topNotes: ["Pineapple", "Apple", "Bergamot"],
+    middleNotes: ["Birch", "Patchouli", "Jasmine"],
+    baseNotes: ["Musk", "Oakmoss", "Vanilla"],
+    accordBars: [
+      { name: "Fruity", strength: 85 },
+      { name: "Smoky", strength: 75 },
+    ],
+    season: ["Spring", "Summer", "Autumn"],
+    daytime: ["Day", "Night"],
+    performance: { longevity: "8-10h", sillage: "Strong" },
+    category: ["fruity"],
+    reviews: [],
+  },
+  {
+    id: 8,
+    brand: "Byredo",
+    name: "Gypsy Water",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.3575.2x.avif",
+    description:
+      "Чистый древесно-ароматический аромат с можжевельником и ванилью.",
+    rating: 8.8,
+    gender: "unisex",
+    concentration: "EDP",
+    accords: ["Woody", "Aromatic", "Fresh"],
+    topNotes: ["Juniper", "Pepper", "Bergamot"],
+    middleNotes: ["Incense", "Pine Needles"],
+    baseNotes: ["Vanilla", "Sandalwood"],
+    accordBars: [
+      { name: "Woody", strength: 80 },
+      { name: "Aromatic", strength: 65 },
+    ],
+    season: ["Spring", "Summer"],
+    daytime: ["Day"],
+    performance: { longevity: "6-8h", sillage: "Soft" },
+    category: ["woody"],
+    reviews: [],
+  },
+  {
+    id: 9,
+    brand: "Viktor & Rolf",
+    name: "Flowerbomb",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1460.2x.avif",
+    description: "Объёмный цветочный аромат с чаем, жасмином и тёплой пачули.",
+    rating: 8.5,
+    gender: "women",
+    concentration: "EDP",
+    accords: ["Floral", "Sweet", "Patchouli"],
+    topNotes: ["Tea", "Bergamot"],
+    middleNotes: ["Jasmine", "Orchid", "Freesia"],
+    baseNotes: ["Patchouli", "Musk"],
+    accordBars: [
+      { name: "Floral", strength: 90 },
+      { name: "Sweet", strength: 60 },
+    ],
+    season: ["Autumn", "Winter"],
+    daytime: ["Night"],
+    performance: { longevity: "8-10h", sillage: "Strong" },
+    category: ["floral"],
+    reviews: [],
+  },
+  {
+    id: 10,
+    brand: "Acqua di Parma",
+    name: "Colonia",
+    image: "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1681.2x.avif",
+    description:
+      "Итальянская цитрусовая классика с лимоном, лавандой и лёгкой древесиной.",
+    rating: 8.4,
+    gender: "unisex",
+    concentration: "EDC",
+    accords: ["Citrus", "Aromatic", "Fresh"],
+    topNotes: ["Lemon", "Bergamot", "Orange"],
+    middleNotes: ["Lavender", "Rosemary"],
+    baseNotes: ["Vetiver", "Sandalwood"],
+    accordBars: [
+      { name: "Citrus", strength: 90 },
+      { name: "Fresh", strength: 75 },
+    ],
+    season: ["Spring", "Summer"],
+    daytime: ["Day"],
+    performance: { longevity: "4-6h", sillage: "Soft" },
+    category: ["citrus"],
+    reviews: [],
   },
 ];

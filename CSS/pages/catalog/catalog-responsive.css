@@ -14,6 +14,16 @@
 
     top: 0;
   }
+
+  .filters-sidebar-panel {
+    max-height: none;
+  }
+
+  .filters-sidebar-scroll {
+    max-height: none;
+    overflow: visible;
+  }
+  
 }
 
 @media (max-width: 1000px) {
