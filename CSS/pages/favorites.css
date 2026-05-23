@@ -1,179 +1,95 @@
 /* =========================
-   PAGE
+   FAVORITES PAGE
 ========================= */
 
 .favorites-page {
+  width: min(var(--container-width), calc(100% - 48px));
   min-height: 100vh;
-
-  padding: 140px 80px 100px;
+  margin: 0 auto;
+  padding: 142px 0 100px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .favorites-header {
-  margin-bottom: 70px;
+  max-width: 760px;
+  margin-bottom: 42px;
 }
 
 .favorites-subtitle {
+  margin: 0 0 12px;
   color: var(--accent);
-
-  letter-spacing: 3px;
-
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-
-  margin-bottom: 20px;
 }
 
 .favorites-header h1 {
-  font-size: 72px;
-
-  margin-bottom: 20px;
+  margin: 0 0 14px;
+  font-size: clamp(44px, 7vw, 76px);
 }
 
 .favorites-description {
-  opacity: 0.7;
-
-  font-size: 20px;
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted-color);
+  font-size: 16px;
 }
-
-/* =========================
-   GRID
-========================= */
 
 .favorites-grid {
   display: grid;
-
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
-
-/* =========================
-   CARD
-========================= */
 
 .favorite-card {
-  border-radius: 30px;
-
-  overflow: hidden;
-
-  text-decoration: none;
-
-  color: var(--text-color);
-
-  background: var(--surface-soft);
-
-  border: 1px solid var(--surface-border);
-
-  transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  min-height: 100%;
 }
-
-/* hover */
-
-.favorite-card:hover {
-  transform: translateY(-10px);
-
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-}
-
-/* =========================
-   IMAGE
-========================= */
-
-.favorite-image {
-  height: 320px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 30px;
-}
-
-.favorite-image img {
-  width: 80%;
-
-  height: 100%;
-
-  object-fit: contain;
-}
-
-/* =========================
-   INFO
-========================= */
-
-.favorite-info {
-  padding: 24px;
-}
-
-.favorite-brand {
-  color: var(--accent);
-
-  font-size: 14px;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 12px;
-}
-
-.favorite-info h3 {
-  margin: 0 0 16px;
-
-  font-size: 28px;
-}
-
-/* =========================
-   EMPTY
-========================= */
 
 .favorites-empty {
+  min-height: 430px;
   display: none;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
+  padding: 56px 24px;
+  border: 1px dashed var(--surface-border);
+  border-radius: var(--radius-panel);
+  background: var(--surface-soft);
   text-align: center;
-
-  padding: 120px 20px;
 }
 
 .favorites-empty h2 {
-  font-size: 52px;
-
-  margin-bottom: 20px;
+  margin: 0 0 12px;
+  color: var(--heading-color);
+  font-size: clamp(30px, 5vw, 48px);
 }
 
 .favorites-empty p {
-  opacity: 0.7;
-
-  margin-bottom: 40px;
+  max-width: 420px;
+  margin: 0 0 28px;
+  color: var(--muted-color);
+  font-size: 15px;
 }
 
-/* button */
-
 .favorites-catalog-btn {
-  height: 58px;
+  min-height: 44px;
+  padding: 0 22px;
+}
 
-  padding: 0 32px;
+@media (max-width: 1080px) {
+  .favorites-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 620px) {
+  .favorites-page {
+    width: calc(100% - 28px);
+    padding-top: 118px;
+    padding-bottom: 72px;
+  }
 
-  border-radius: 18px;
-
-  text-decoration: none;
-
-  background: var(--accent-gradient);
-
-  color: white;
-
-  font-weight: 600;
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
 }

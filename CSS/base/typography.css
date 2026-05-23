@@ -1,13 +1,66 @@
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg-color);
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(212, 161, 58, 0.055), transparent 340px),
+    var(--bg-color);
   color: var(--text-color);
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.light {
+  background:
+    linear-gradient(180deg, rgba(212, 161, 58, 0.09), transparent 360px),
+    var(--bg-color);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: clamp(44px, 7vw, 88px);
+  line-height: 0.96;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.05;
+}
+
+h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.16;
 }
 
 p {
-  font-size: 24px;
+  color: var(--muted-color);
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--heading-color);
 }

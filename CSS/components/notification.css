@@ -1,48 +1,33 @@
 .notification {
   position: fixed;
-
-  top: 30px;
+  top: 92px;
   left: 50%;
-
-  transform: translateX(-50%) translateY(-20px);
-
-  padding: 16px 24px;
-
-  border-radius: 18px;
-
-  background: rgba(20, 20, 25, 0.85);
-
-  backdrop-filter: blur(20px);
-
-  color: white;
-
+  padding: 13px 18px;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-control);
+  background: var(--panel-bg-strong);
+  color: var(--text-color);
+  box-shadow: var(--shadow-soft);
+  font-size: 14px;
   font-weight: 600;
-
   opacity: 0;
-
   pointer-events: none;
-
+  transform: translateX(-50%) translateY(-12px);
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s var(--ease-luxury);
   z-index: 99999;
-
-  transition: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* show */
 
 .notification.show {
   opacity: 1;
-
   transform: translateX(-50%) translateY(0);
 }
 
-/* success */
-
 .notification.success {
-  box-shadow: 0 10px 35px var(--accent-glow);
+  border-color: var(--surface-border-strong);
 }
 
-/* error */
-
 .notification.error {
-  box-shadow: 0 10px 35px rgba(255, 80, 80, 0.3);
+  border-color: rgba(180, 66, 66, 0.48);
 }

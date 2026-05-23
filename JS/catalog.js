@@ -8,6 +8,11 @@ const catalogFiltersRoot = document.querySelector("#catalog-filters");
 const filterResetBtn = document.querySelector(".filter-reset-btn");
 const catalogResultsMeta = document.querySelector(".catalog-results-meta");
 const catalogEmpty = document.querySelector(".catalog-empty");
+const sortSelect = document.querySelector(".sort-select");
+const sortDropdown = document.querySelector(".sort-dropdown");
+const sortCurrent = document.querySelector(".sort-current");
+const sortOptions = document.querySelectorAll(".sort-option");
+const viewToggleButtons = document.querySelectorAll(".view-toggle-btn");
 
 const modalOverlay = document.querySelector(".perfume-modal-overlay");
 const modalClose = document.querySelector(".modal-close");
@@ -19,6 +24,8 @@ const modalPerfumeDescription = document.querySelector(
   "#modalPerfumeDescription",
 );
 const modalPerfumeTags = document.querySelector("#modalPerfumeTags");
+const modalFavoriteBtn = document.querySelector(".modal-secondary-btn");
+let activeModalPerfume = null;
 
 /* =========================
    FILTER GROUPS CONFIG
@@ -81,6 +88,8 @@ const FILTER_GROUPS = [
 
 const catalogState = {
   query: "",
+  sort: "default",
+  view: "grid",
   filters: {
     brands: [],
     genders: [],
@@ -106,6 +115,15 @@ function getFavorites() {
 
 function saveFavorites(favorites) {
   localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function syncFavoritesCounter() {
+  const count = getFavorites().length;
+
+  document.querySelectorAll(".favorites-count").forEach((counter) => {
+    counter.textContent = count;
+    counter.setAttribute("aria-label", `В избранном ${count}`);
+  });
 }
 
 /* =========================
@@ -306,6 +324,7 @@ function renderPerfumes(data) {
     return;
   }
 
+  perfumeGrid.classList.toggle("list-view", catalogState.view === "list");
   perfumeGrid.innerHTML = "";
 
   const hasResults = data.length > 0;
@@ -340,17 +359,22 @@ function renderPerfumes(data) {
       <div class="perfume-info">
         <div class="perfume-brand">${perfume.brand}</div>
         <h3>${perfume.name}</h3>
-        <p>${perfume.description}</p>
-        <div class="perfume-tags">
+        <p class="perfume-type">${perfume.concentration || "Fragrance"}</p>
+        <p class="perfume-description">${perfume.description}</p>
+        <div class="perfume-tags" aria-label="Аккорды аромата">
           ${perfume.accords
+            .slice(0, 3)
             .map((tag) => `<span class="perfume-tag">${tag}</span>`)
             .join("")}
         </div>
-        <div class="perfume-rating">⭐ ${perfume.rating}</div>
+        <div class="perfume-actions">
+          <button type="button" class="product-action-btn">Подробнее</button>
+        </div>
       </div>
     `;
 
     const favoriteBtn = card.querySelector(".favorite-btn");
+    const actionBtn = card.querySelector(".product-action-btn");
 
     if (isFavorite) {
       favoriteBtn.textContent = "♥";
@@ -377,6 +401,13 @@ function renderPerfumes(data) {
       }
 
       saveFavorites(nextFavorites);
+      syncFavoritesCounter();
+    });
+
+    actionBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      openPerfumeModal(perfume);
     });
 
     card.addEventListener("click", () => {
@@ -408,6 +439,7 @@ function openPerfumeModal(perfume) {
     return;
   }
 
+  activeModalPerfume = perfume;
   modalOverlay.classList.add("active");
   modalPerfumeImage.src = perfume.image;
   modalPerfumeImage.alt = perfume.name;
@@ -425,6 +457,13 @@ function openPerfumeModal(perfume) {
     modalButton.href = `perfume.html?id=${perfume.id}`;
   }
 
+  if (modalFavoriteBtn) {
+    const isFavorite = getFavorites().includes(perfume.id);
+
+    modalFavoriteBtn.textContent = isFavorite ? "♥ В избранном" : "♡ В избранное";
+    modalFavoriteBtn.classList.toggle("active", isFavorite);
+  }
+
   document.body.style.overflow = "hidden";
 }
 
@@ -434,6 +473,7 @@ function closePerfumeModal() {
   }
 
   modalOverlay.classList.remove("active");
+  activeModalPerfume = null;
   document.body.style.overflow = "";
 }
 
@@ -441,11 +481,29 @@ function closePerfumeModal() {
    CATALOG UPDATE
 ========================= */
 
+function sortPerfumes(list) {
+  const sortedList = [...list];
+
+  if (catalogState.sort === "rating-desc") {
+    return sortedList.sort((a, b) => b.rating - a.rating);
+  }
+
+  if (catalogState.sort === "name-asc") {
+    return sortedList.sort((a, b) => a.name.localeCompare(b.name, "ru"));
+  }
+
+  if (catalogState.sort === "brand-asc") {
+    return sortedList.sort((a, b) => a.brand.localeCompare(b.brand, "ru"));
+  }
+
+  return sortedList;
+}
+
 function getVisiblePerfumes() {
-  return filterPerfumeList(perfumes, {
+  return sortPerfumes(filterPerfumeList(perfumes, {
     query: catalogState.query,
     filters: catalogState.filters,
-  });
+  }));
 }
 
 function updateCatalog() {
@@ -486,8 +544,96 @@ if (filterResetBtn) {
   filterResetBtn.addEventListener("click", resetCatalogFilters);
 }
 
+function closeSortDropdown() {
+  if (!sortDropdown || !sortSelect) {
+    return;
+  }
+
+  sortDropdown.classList.remove("open");
+  sortSelect.setAttribute("aria-expanded", "false");
+}
+
+if (sortSelect && sortDropdown) {
+  sortDropdown.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
+  sortSelect.addEventListener("click", () => {
+    const isOpen = sortDropdown.classList.toggle("open");
+
+    sortSelect.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+sortOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    catalogState.sort = option.dataset.value || "default";
+
+    sortOptions.forEach((item) => {
+      const isActive = item === option;
+
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-selected", String(isActive));
+    });
+
+    if (sortCurrent) {
+      sortCurrent.textContent = option.textContent.trim();
+    }
+
+    closeSortDropdown();
+    updateCatalog();
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!sortDropdown || sortDropdown.contains(event.target)) {
+    return;
+  }
+
+  closeSortDropdown();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeSortDropdown();
+  }
+});
+
+viewToggleButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    catalogState.view = button.dataset.view || "grid";
+
+    viewToggleButtons.forEach((item) => {
+      item.classList.toggle("active", item === button);
+    });
+
+    updateCatalog();
+  });
+});
+
 if (modalClose) {
   modalClose.addEventListener("click", closePerfumeModal);
+}
+
+if (modalFavoriteBtn) {
+  modalFavoriteBtn.addEventListener("click", () => {
+    if (!activeModalPerfume) {
+      return;
+    }
+
+    let nextFavorites = getFavorites();
+    const isFavorite = nextFavorites.includes(activeModalPerfume.id);
+
+    nextFavorites = isFavorite
+      ? nextFavorites.filter((id) => id !== activeModalPerfume.id)
+      : [...nextFavorites, activeModalPerfume.id];
+
+    saveFavorites(nextFavorites);
+    syncFavoritesCounter();
+    modalFavoriteBtn.textContent = isFavorite ? "♡ В избранное" : "♥ В избранном";
+    modalFavoriteBtn.classList.toggle("active", !isFavorite);
+    updateCatalog();
+  });
 }
 
 if (modalOverlay) {

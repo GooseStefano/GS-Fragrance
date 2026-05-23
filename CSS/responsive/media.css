@@ -1,18 +1,14 @@
 /* =========================
-   NAVBAR
+   GLOBAL RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .navbar {
-    top: 12px;
-    width: calc(100% - 24px);
-    height: 64px;
-    padding: 0 10px 0 14px;
-    border-radius: 22px;
+    height: 66px;
+    padding: 0 14px;
   }
 
   .navbar.scrolled {
-    top: 8px;
     height: 62px;
   }
 
@@ -21,42 +17,30 @@
   }
 
   .navbar-logo-mark {
-    width: 40px;
-    height: 40px;
-    border-radius: 13px;
+    width: 36px;
+    height: 36px;
   }
 
-  .navbar-logo-text {
-    display: none;
-  }
-
+  .navbar-logo-text,
   .navbar-center {
     display: none;
   }
 
   .navbar-actions {
-    gap: 8px;
+    gap: 6px;
   }
 
+  .navbar .icon-btn,
   .icon-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 14px;
+    width: 38px;
+    height: 38px;
   }
 
   .theme-switch {
-    width: 64px;
-    height: 36px;
-    border-radius: 13px;
-  }
+    --switch-size: 30px;
+    --switch-travel: 30px;
 
-  .switch-circle {
-    width: 28px;
-    height: 28px;
-  }
-
-  body.light .switch-circle {
-    transform: translateX(28px);
+    height: 38px;
   }
 
   .menu-toggle {
@@ -66,30 +50,19 @@
 
 @media (max-width: 520px) {
   .navbar {
-    width: calc(100% - 18px);
-    padding: 0 8px 0 10px;
-  }
-
-  .navbar-actions {
-    gap: 6px;
-  }
-
-  .icon-btn {
-    width: 40px;
-    height: 40px;
+    padding: 0 10px;
   }
 
   .theme-switch {
-    width: 58px;
-  }
+    --switch-size: 28px;
+    --switch-travel: 28px;
 
-  body.light .switch-circle {
-    transform: translateX(22px);
+    height: 36px;
   }
 
   .mobile-menu {
-    right: -1px;
-    width: calc(100vw - 18px);
+    right: 10px;
+    width: calc(100vw - 20px);
   }
 }
 

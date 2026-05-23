@@ -3,139 +3,105 @@
 ========================= */
 
 .similar-section {
-  padding: 0 80px 120px;
+  width: min(var(--container-width), calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 88px;
 }
-
-/* title */
 
 .similar-section h2 {
-  font-size: 48px;
-
-  margin-bottom: 40px;
+  margin: 0 0 28px;
+  font-size: clamp(30px, 4vw, 46px);
 }
-
-/* =========================
-   GRID
-========================= */
 
 .similar-grid {
   display: grid;
-
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
-
-/* =========================
-   CARD
-========================= */
 
 .similar-card {
   position: relative;
-
   overflow: hidden;
-
-  border-radius: 28px;
-
-  text-decoration: none;
-
-  color: var(--text-color);
-
-  background: var(--surface-soft);
-
   border: 1px solid var(--surface-border);
-
-  transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: var(--radius-card);
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  transition:
+    transform 0.3s var(--ease-luxury),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
-
-/* hover */
 
 .similar-card:hover {
-  transform: translateY(-10px);
-
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  border-color: var(--surface-border-strong);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
-/* =========================
-   IMAGE
-========================= */
-
 .similar-image {
-  height: 320px;
-
+  height: 238px;
+  padding: 26px 22px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 30px;
+  border-bottom: 1px solid var(--surface-border);
+  background:
+    radial-gradient(circle at 50% 60%, var(--accent-soft), transparent 62%),
+    var(--panel-bg);
 }
 
 .similar-image img {
-  width: 80%;
-
+  width: 86%;
   height: 100%;
-
   object-fit: contain;
-
-  transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.28));
+  transition: transform 0.42s var(--ease-luxury);
 }
-
-/* image hover */
 
 .similar-card:hover img {
-  transform: scale(1.08) translateY(-6px);
+  transform: translateY(-4px) scale(1.025);
 }
-
-/* =========================
-   INFO
-========================= */
 
 .similar-info {
-  padding: 24px;
+  padding: 18px;
 }
-
-/* brand */
 
 .similar-brand {
+  margin-bottom: 7px;
   color: var(--accent);
-
-  font-size: 14px;
-
-  letter-spacing: 1px;
-
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-
-  margin-bottom: 10px;
 }
-
-/* title */
 
 .similar-info h3 {
-  margin: 0 0 16px;
-
-  font-size: 26px;
+  margin: 0 0 12px;
+  color: var(--heading-color);
+  font-size: 18px;
+  font-weight: 550;
 }
-
-/* rating */
 
 .similar-rating {
-  opacity: 0.85;
+  color: var(--muted-color);
+  font-size: 13px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1100px) {
-  .similar-section {
-    padding: 0 30px 100px;
+@media (max-width: 1080px) {
+  .similar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
-  .similar-section h2 {
-    font-size: 38px;
+@media (max-width: 620px) {
+  .similar-section {
+    width: calc(100% - 28px);
+    padding-bottom: 64px;
+  }
+
+  .similar-grid {
+    grid-template-columns: 1fr;
   }
 }

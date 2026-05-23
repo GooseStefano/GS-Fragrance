@@ -4,97 +4,58 @@
 
 .catalog-hero {
   position: relative;
-
-  height: auto;
-
-  min-height: 420px;
-
-  padding: 150px 24px 86px;
-
-  box-sizing: border-box;
-
+  min-height: 390px;
+  padding: 138px 24px 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  text-align: center;
-
   overflow: hidden;
-
+  text-align: center;
   background-image: url("https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600");
-
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .catalog-hero-overlay {
   position: absolute;
-
   inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 8, 7, 0.48), rgba(8, 8, 7, 0.66)),
+    linear-gradient(90deg, rgba(8, 8, 7, 0.36), transparent, rgba(8, 8, 7, 0.28));
+}
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.8)
-  );
-
-  backdrop-filter: blur(6px);
+body.light .catalog-hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(22, 18, 12, 0.28), rgba(22, 18, 12, 0.46)),
+    linear-gradient(90deg, rgba(22, 18, 12, 0.26), transparent, rgba(22, 18, 12, 0.16));
 }
 
 .catalog-hero-content {
   position: relative;
-
   z-index: 2;
-
-  max-width: 800px;
-
-  padding: 20px;
+  max-width: 760px;
 }
 
 .catalog-subtitle {
-  color: var(--accent-strong);
-
-  font-size: 14px;
-
-  letter-spacing: 3px;
-
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-
-  margin-bottom: 20px;
-
-  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
 }
 
 .catalog-hero h1 {
-  font-size: 58px;
-
-  color: #f7f2ea;
-
-  margin-bottom: 20px;
-
-  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
+  margin: 0 0 18px;
+  color: #FFF8EE;
+  font-size: clamp(44px, 7vw, 76px);
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
 }
 
 .catalog-description {
-  font-size: 20px;
-
-  color: rgba(247, 242, 234, 0.82);
-
-  opacity: 0.75;
-
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255, 248, 238, 0.82);
+  font-size: 17px;
   line-height: 1.7;
-
-  text-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
-}
-
-@media (max-width: 768px) {
-  .catalog-hero {
-    min-height: 390px;
-
-    padding: 130px 18px 70px;
-  }
-
-  .catalog-hero h1 {
-    font-size: 44px;
-  }
 }

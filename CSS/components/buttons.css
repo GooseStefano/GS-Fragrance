@@ -1,218 +1,140 @@
 .icon-btn {
   width: 40px;
   height: 40px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  border-radius: 12px;
-
-  background: rgba(255, 255, 255, 0.08);
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  backdrop-filter: blur(10px);
-
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-icon);
+  background: var(--nav-control-bg);
+  color: var(--text-color);
   cursor: pointer;
-
-  transition: 0.35s;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.auth-btn {
-  width: 100%;
-  height: 56px;
+.icon-btn:hover {
+  border-color: var(--surface-border-strong);
+  background: var(--nav-control-hover);
+  color: var(--heading-color);
+  transform: translateY(-1px);
+}
 
-  border: none;
-
-  border-radius: 16px;
-
-  margin-top: 10px;
-
-  background: var(--accent-gradient);
-
-  color: white;
-
-  font-size: 16px;
-  font-weight: 600;
-
+.auth-btn,
+.product-action-btn,
+.favorites-catalog-btn,
+.modal-main-btn,
+.filter-reset-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-decoration: none;
   cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
-  transition: 0.35s;
+.auth-btn,
+.product-action-btn,
+.modal-main-btn,
+.favorites-catalog-btn {
+  border: 1px solid transparent;
+  background: var(--accent-gradient);
+  color: #141210;
+}
+
+.auth-btn:hover,
+.product-action-btn:hover,
+.modal-main-btn:hover,
+.favorites-catalog-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px var(--accent-glow);
+}
+
+.auth-btn:active,
+.product-action-btn:active,
+.modal-main-btn:active,
+.favorites-catalog-btn:active {
+  transform: translateY(0);
 }
 
 .password-toggle {
   position: absolute;
-
   top: 50%;
-  right: 18px;
-
-  transform: translateY(-50%);
-
-  width: 36px;
-  height: 36px;
-
-  border: none;
-
-  border-radius: 12px;
-
-  background: transparent;
-
-  color: #7d889f;
-
-  display: flex;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  cursor: pointer;
-
-  transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.auth-btn {
-  width: 100%;
-  height: 56px;
-
-  border: none;
-
-  border-radius: 16px;
-
-  margin-top: 10px;
-
-  background: var(--accent-gradient);
-
-  color: white;
-
-  font-size: 16px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.35s;
-}
-
-.auth-btn:hover {
-  transform: translateY(-2px);
-
-  box-shadow: 0 15px 30px var(--accent-glow);
-}
-
-.password-toggle {
-  position: absolute;
-
-  top: 50%;
-  right: 18px;
-
-  transform: translateY(-50%);
-
-  width: 36px;
-  height: 36px;
-
-  border: none;
-
-  border-radius: 12px;
-
+  border: 1px solid transparent;
+  border-radius: 7px;
   background: transparent;
-
-  color: #7d889f;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  color: var(--muted-color);
   cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
 
-  transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+.password-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--accent);
 }
 
 .password-toggle svg {
   position: absolute;
-
-  width: 20px;
-  height: 20px;
-
-  transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 18px;
+  height: 18px;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
-.password-toggle:hover {
-  background: var(--accent-soft);
-
-  color: var(--accent-strong);
+.password-toggle .eye-closed {
+  opacity: 0;
+  transform: scale(0.86);
 }
 
 .password-toggle.active .eye-open {
   opacity: 0;
-
-  transform: scale(0.7) rotate(10deg);
+  transform: scale(0.86);
 }
 
 .password-toggle.active .eye-closed {
   opacity: 1;
-
-  transform: scale(1) rotate(0);
-}
-
-.auth-submit {
-  position: relative;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1);
 }
 
 .auth-submit.loading {
   pointer-events: none;
-
   color: transparent;
 }
 
 .auth-submit.loading::after {
   content: "";
-
   position: absolute;
-
   top: 50%;
   left: 50%;
-
-  width: 22px;
-  height: 22px;
-
-  margin-left: -11px;
-  margin-top: -11px;
-
-  border: 2px solid rgba(255, 255, 255, 0.35);
-
-  border-top-color: white;
-
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid rgba(20, 18, 16, 0.28);
+  border-top-color: #141210;
   border-radius: 50%;
-
   animation: buttonSpin 0.8s linear infinite;
-}
-
-.auth-submit:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 14px 40px var(--accent-glow);
-}
-
-/* click */
-
-.auth-submit:active {
-  transform: scale(0.98);
-}
-
-.icon-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-body.light .icon-btn {
-  background: #eef1f6;
-
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-body.light .icon-btn:hover {
-  background: #dfe5ef;
 }

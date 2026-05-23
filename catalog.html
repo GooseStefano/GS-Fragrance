@@ -68,6 +68,93 @@
         <!-- CONTENT -->
 
         <div class="catalog-content">
+          <div class="catalog-content-header">
+            <div>
+              <p class="catalog-kicker">Luxury fragrance edit</p>
+
+              <h2>Каталог ароматов</h2>
+
+              <p class="catalog-content-description">
+                Нишевая, дизайнерская и люксовая парфюмерия в строгой подборке.
+              </p>
+            </div>
+
+            <div class="catalog-controls" aria-label="Настройки отображения каталога">
+              <div class="sort-control">
+                <span id="sort-label">Сортировка</span>
+
+                <div class="sort-dropdown">
+                  <button
+                    type="button"
+                    class="sort-select"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-labelledby="sort-label"
+                  >
+                    <span class="sort-current">По умолчанию</span>
+                  </button>
+
+                  <div class="sort-menu" role="listbox" aria-labelledby="sort-label">
+                    <button
+                      type="button"
+                      class="sort-option active"
+                      role="option"
+                      aria-selected="true"
+                      data-value="default"
+                    >
+                      По умолчанию
+                    </button>
+
+                    <button
+                      type="button"
+                      class="sort-option"
+                      role="option"
+                      aria-selected="false"
+                      data-value="rating-desc"
+                    >
+                      Сначала высокий рейтинг
+                    </button>
+
+                    <button
+                      type="button"
+                      class="sort-option"
+                      role="option"
+                      aria-selected="false"
+                      data-value="name-asc"
+                    >
+                      По названию
+                    </button>
+
+                    <button
+                      type="button"
+                      class="sort-option"
+                      role="option"
+                      aria-selected="false"
+                      data-value="brand-asc"
+                    >
+                      По бренду
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="view-toggle" aria-label="Вид каталога">
+                <button type="button" class="view-toggle-btn active" data-view="grid" aria-label="Сетка">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+
+                <button type="button" class="view-toggle-btn" data-view="list" aria-label="Список">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
           <p class="catalog-results-meta" aria-live="polite"></p>
 
           <div class="catalog-results-shell">
@@ -113,8 +200,8 @@
             <div class="modal-actions">
               <a href="" class="modal-main-btn"> Подробнее </a>
 
-              <button class="modal-secondary-btn">
-                ${isFavorite ? "♥" : "♡"} В избранное
+              <button type="button" class="modal-secondary-btn">
+                ♡ В избранное
               </button>
             </div>
           </div>
