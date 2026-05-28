@@ -27,6 +27,16 @@ function getCounterMarkup(item, favoritesCount) {
   </span>`;
 }
 
+function getActionCounterMarkup(favoritesCount) {
+  if (favoritesCount <= 0) {
+    return "";
+  }
+
+  return `<span class="navbar-action-count" aria-label="В избранном ${favoritesCount}">
+    ${favoritesCount}
+  </span>`;
+}
+
 function renderNavLinks(baseClass, currentPage, favoritesCount) {
   return NAV_ITEMS.map(
     (item) => `
@@ -48,10 +58,13 @@ function renderNavbarMarkup(currentPage, favoritesCount) {
       <a
         href="index.html"
         class="navbar-logo"
-        aria-label="На главную страницу GS Fragrance Guide"
+        aria-label="На главную страницу PERFUMESITE"
       >
         <span class="navbar-logo-mark">GS</span>
-        <span class="navbar-logo-text">Fragrance Guide</span>
+        <span class="navbar-logo-copy">
+          <span class="navbar-logo-title">PERFUMESITE</span>
+          <span class="navbar-logo-subtitle">Discover your essence</span>
+        </span>
       </a>
 
       <div class="navbar-center">
@@ -67,6 +80,30 @@ function renderNavbarMarkup(currentPage, favoritesCount) {
           <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
             <line x1="16.5" y1="16.5" x2="22" y2="22" />
+          </svg>
+        </button>
+
+        <a
+          class="icon-btn favorites-action-btn"
+          href="favorites.html"
+          aria-label="Открыть избранное"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.8 4.6a5.2 5.2 0 0 0-7.4 0L12 6l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 20.8l8.8-8.8a5.2 5.2 0 0 0 0-7.4Z" />
+          </svg>
+          ${getActionCounterMarkup(favoritesCount)}
+        </a>
+
+        <button
+          class="icon-btn profile-btn"
+          type="button"
+          aria-label="Открыть профиль"
+        >
+          <img class="avatar" src="" alt="Аватар пользователя" />
+
+          <svg class="icon default-user" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c2-4 14-4 16 0" />
           </svg>
         </button>
 
@@ -101,19 +138,6 @@ function renderNavbarMarkup(currentPage, favoritesCount) {
           </svg>
 
           <span class="switch-circle" aria-hidden="true"></span>
-        </button>
-
-        <button
-          class="icon-btn profile-btn"
-          type="button"
-          aria-label="Открыть профиль"
-        >
-          <img class="avatar" src="" alt="Аватар пользователя" />
-
-          <svg class="icon default-user" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 20c2-4 14-4 16 0" />
-          </svg>
         </button>
 
         <button
@@ -157,7 +181,7 @@ function initThemeSwitch() {
     themeSwitch.setAttribute("aria-pressed", String(isLight));
     themeSwitch.setAttribute(
       "aria-label",
-      isLight ? "Включить темную тему" : "Включить светлую тему",
+      isLight ? "Включить тёмную тему" : "Включить светлую тему",
     );
   }
 

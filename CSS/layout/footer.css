@@ -1,7 +1,7 @@
 .footer {
-  padding: 54px clamp(18px, 5vw, 72px) 24px;
+  padding: 58px clamp(18px, 5vw, 72px) 26px;
   border-top: 1px solid var(--surface-border);
-  background: var(--panel-bg);
+  background: var(--section-bg);
   color: var(--text-color);
 }
 
@@ -9,7 +9,7 @@
   width: min(var(--container-width), 100%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1.2fr;
+  grid-template-columns: 1.35fr 0.8fr 1fr;
   gap: 34px;
 }
 
@@ -24,6 +24,10 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.footer-brand h3 {
+  letter-spacing: 0.16em;
 }
 
 .footer-section p,

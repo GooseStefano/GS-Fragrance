@@ -2,6 +2,20 @@
    GLOBAL RESPONSIVE
 ========================= */
 
+@media (max-width: 1120px) {
+  .navbar-logo {
+    min-width: 0;
+  }
+
+  .navbar-logo-copy {
+    display: none;
+  }
+
+  .navbar-center {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 980px) {
   .navbar {
     height: 66px;
@@ -21,7 +35,6 @@
     height: 36px;
   }
 
-  .navbar-logo-text,
   .navbar-center {
     display: none;
   }

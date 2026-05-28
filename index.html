@@ -2,360 +2,313 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>GS Fragrance Guide</title>
-
+    <title>PERFUMESITE - premium fragrance guide</title>
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
 
   <body>
-    <!-- =========================
-       PAGE TRANSITION
-  ========================= -->
-
     <div class="page-transition">
-      <!-- =========================
-         NAVBAR
-    ========================= -->
-
       <div id="navbar"></div>
 
-      <!-- =========================
-         SITE CONTENT
-    ========================= -->
+      <main class="site-content home-page">
+        <section class="hero" aria-label="Главный экран PERFUMESITE">
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <p class="section-kicker">Искусство аромата</p>
 
-      <div class="site-content">
-        <!-- HERO -->
+              <h1 class="hero-title">Найди свой идеальный аромат</h1>
 
-        <section class="hero">
-          <h1>GS Fragrance Guide</h1>
+              <p class="hero-description">
+                Погрузитесь в мир утончённых ароматов, нишевой парфюмерии и
+                дизайнерских композиций, собранных в строгой luxury-подборке.
+              </p>
 
-          <p>Откройте для себя мир ароматов</p>
+              <a href="catalog.html" class="hero-cta">
+                Перейти в каталог
+                <span aria-hidden="true">→</span>
+              </a>
 
-          <a href="#categories" class="arrow"> ↓ </a>
-        </section>
-
-        <!-- CATEGORIES -->
-
-        <section id="categories" class="categories">
-          <h2>Какие ароматы вас интересуют?</h2>
-
-          <div class="cards">
-            <a href="catalog.html?gender=men" class="card men">
-              <div class="card-content">
-                <h3>Мужские</h3>
+              <div class="hero-dots" aria-label="Слайды">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
               </div>
-            </a>
+            </div>
 
-            <a href="catalog.html?gender=unisex" class="card unisex">
-              <div class="card-content">
-                <h3>Унисекс</h3>
-              </div>
-            </a>
-
-            <a href="catalog.html?gender=women" class="card women">
-              <div class="card-content">
-                <h3>Женские</h3>
-              </div>
-            </a>
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-visual-glow"></div>
+              <div class="hero-plinth"></div>
+              <div class="hero-branch"></div>
+              <img
+                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.38269.2x.avif"
+                alt=""
+                class="hero-bottle"
+              />
+            </div>
           </div>
         </section>
 
-        <!-- FOOTER -->
-
-        <footer class="footer">
-          <div class="footer-container">
-            <div class="footer-section">
-              <h3>Навигация</h3>
-
-              <a href="index.html"> Главная </a>
-
-              <a href="catalog.html?gender=men"> Мужские </a>
-
-              <a href="catalog.html?gender=unisex"> Унисекс </a>
-
-              <a href="catalog.html?gender=women"> Женские </a>
-            </div>
-
-            <div class="footer-section">
-              <h3>Контакты</h3>
-
-              <p>Email: danilamorozov190@gmail.com</p>
-
-              <p>Telegram: @GooseStefano</p>
-            </div>
-
-            <div class="footer-section">
-              <h3>О сайте</h3>
-
-              <p>GS Fragrance Guide — сайт о лучших ароматах.</p>
+        <section id="categories" class="categories home-section" aria-labelledby="categories-title">
+          <div class="home-section-header">
+            <div>
+              <p class="section-kicker">Коллекции</p>
+              <h2 id="categories-title" class="home-section-title">Выберите направление</h2>
             </div>
           </div>
 
-          <div class="footer-bottom">
-            <p>© 2026 GS Fragrance Guide</p>
+          <div class="category-grid">
+            <a href="catalog.html?gender=women" class="category-card">
+              <span class="category-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 8h8l1 12H7L8 8Z" />
+                  <path d="M9.5 8a2.5 2.5 0 0 1 5 0" />
+                  <path d="M12 2v3" />
+                </svg>
+              </span>
+
+              <span class="category-copy">
+                <span class="category-title">Женские ароматы</span>
+                <span class="category-text">Элегантность и чувственность</span>
+                <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
+              </span>
+
+              <img
+                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.55883.2x.avif"
+                alt=""
+              />
+            </a>
+
+            <a href="catalog.html?gender=men" class="category-card">
+              <span class="category-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 8h8l1 12H7L8 8Z" />
+                  <path d="M9.5 8a2.5 2.5 0 0 1 5 0" />
+                  <path d="M12 2v3" />
+                </svg>
+              </span>
+
+              <span class="category-copy">
+                <span class="category-title">Мужские ароматы</span>
+                <span class="category-text">Сила и характер в каждой ноте</span>
+                <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
+              </span>
+
+              <img
+                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.2x.avif"
+                alt=""
+              />
+            </a>
+
+            <a href="catalog.html?gender=unisex" class="category-card">
+              <span class="category-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3l2.1 4.4L19 9l-3.6 3.5.8 5-4.2-2.4-4.2 2.4.8-5L5 9l4.9-1.6L12 3Z" />
+                </svg>
+              </span>
+
+              <span class="category-copy">
+                <span class="category-title">Нишевые ароматы</span>
+                <span class="category-text">Уникальные композиции</span>
+                <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
+              </span>
+
+              <img
+                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.2x.avif"
+                alt=""
+              />
+            </a>
+
+            <a href="catalog.html" class="category-card">
+              <span class="category-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3l8 4-8 4-8-4 8-4Z" />
+                  <path d="M4 12l8 4 8-4" />
+                  <path d="M4 17l8 4 8-4" />
+                </svg>
+              </span>
+
+              <span class="category-copy">
+                <span class="category-title">Популярные ароматы</span>
+                <span class="category-text">Выбор наших читателей</span>
+                <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
+              </span>
+
+              <img
+                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56737.2x.avif"
+                alt=""
+              />
+            </a>
           </div>
-        </footer>
-      </div>
-    </div>
+        </section>
 
-    <!-- =========================
-       SEARCH OVERLAY
-  ========================= -->
+        <section class="popular-section home-section" aria-labelledby="popular-title">
+          <div class="home-section-header">
+            <div>
+              <p class="section-kicker">Подборки для вас</p>
+              <h2 id="popular-title" class="home-section-title">Популярные ароматы</h2>
+            </div>
 
-    <div class="search-overlay">
-      <div class="search-modal">
-        <!-- TOP -->
+            <a href="catalog.html" class="section-link">
+              Смотреть все
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
 
-        <div class="search-top">
-          <input
-            type="text"
-            class="global-search-input"
-            placeholder="Найти аромат..."
-          />
+          <div class="popular-grid">
+            <article class="home-product-card">
+              <a href="perfume.html?id=1" class="home-product-link" aria-label="Tom Ford Oud Wood">
+                <span class="home-product-image">
+                  <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56737.2x.avif" alt="Tom Ford Oud Wood" />
+                </span>
+                <span class="home-product-brand">Tom Ford</span>
+                <span class="home-product-title">Oud Wood</span>
+                <span class="home-product-type">EDP</span>
+              </a>
+            </article>
 
-          <button class="search-close">✕</button>
+            <article class="home-product-card">
+              <a href="perfume.html?id=7" class="home-product-link" aria-label="Creed Aventus">
+                <span class="home-product-image">
+                  <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.9828.2x.avif" alt="Creed Aventus" />
+                </span>
+                <span class="home-product-brand">Creed</span>
+                <span class="home-product-title">Aventus</span>
+                <span class="home-product-type">EDP</span>
+              </a>
+            </article>
+
+            <article class="home-product-card">
+              <a href="perfume.html?id=6" class="home-product-link" aria-label="Maison Francis Kurkdjian Baccarat Rouge 540">
+                <span class="home-product-image">
+                  <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.2x.avif" alt="Maison Francis Kurkdjian Baccarat Rouge 540" />
+                </span>
+                <span class="home-product-brand">Maison Francis Kurkdjian</span>
+                <span class="home-product-title">Baccarat Rouge 540</span>
+                <span class="home-product-type">EDP</span>
+              </a>
+            </article>
+
+            <article class="home-product-card">
+              <a href="perfume.html?id=8" class="home-product-link" aria-label="Byredo Gypsy Water">
+                <span class="home-product-image">
+                  <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.3575.2x.avif" alt="Byredo Gypsy Water" />
+                </span>
+                <span class="home-product-brand">Byredo</span>
+                <span class="home-product-title">Gypsy Water</span>
+                <span class="home-product-type">EDP</span>
+              </a>
+            </article>
+
+            <article class="home-product-card">
+              <a href="perfume.html?id=3" class="home-product-link" aria-label="Dior Sauvage">
+                <span class="home-product-image">
+                  <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.2x.avif" alt="Dior Sauvage" />
+                </span>
+                <span class="home-product-brand">Dior</span>
+                <span class="home-product-title">Sauvage</span>
+                <span class="home-product-type">EDT</span>
+              </a>
+            </article>
+
+            <article class="home-product-card">
+              <a href="perfume.html?id=4" class="home-product-link" aria-label="Chanel No. 5">
+                <span class="home-product-image">
+                  <img src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.38269.2x.avif" alt="Chanel No. 5" />
+                </span>
+                <span class="home-product-brand">Chanel</span>
+                <span class="home-product-title">No. 5</span>
+                <span class="home-product-type">EDP</span>
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section class="atelier-section home-section" aria-labelledby="atelier-title">
+          <div class="atelier-panel">
+            <div class="atelier-copy">
+              <p class="section-kicker">Fragrance edit</p>
+              <h2 id="atelier-title" class="home-section-title">Ароматы как часть личного стиля</h2>
+              <p>
+                Мы собираем композиции не по цене и громкости бренда, а по характеру:
+                сезон, настроение, стойкость, аккорды и то самое первое впечатление.
+              </p>
+              <a href="catalog.html" class="section-link">
+                Изучить подборку
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="atelier-notes" aria-label="Принципы подбора">
+              <div>
+                <span>01</span>
+                <strong>Ноты</strong>
+                <p>Древесные, амбровые, свежие и цветочные акценты.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <strong>Сезон</strong>
+                <p>Подбор по погоде, времени суток и настроению.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <strong>Характер</strong>
+                <p>Лаконичные рекомендации без лишнего визуального шума.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section footer-brand">
+            <h3>PERFUMESITE</h3>
+            <p>Premium fragrance guide для тех, кто выбирает аромат как часть образа.</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Навигация</h3>
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="favorites.html">Избранное</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <p>Email: danilamorozov190@gmail.com</p>
+            <p>Telegram: @GooseStefano</p>
+          </div>
         </div>
 
-        <!-- RESULTS -->
-
-        <div class="search-results"></div>
-      </div>
-    </div>
-
-    <!-- =========================
-       AUTH OVERLAY
-  ========================= -->
-
-    <div class="auth-overlay">
-      <div class="auth-modal">
-        <!-- CLOSE -->
-
-        <button class="auth-close">✕</button>
-
-        <!-- LOGO -->
-
-        <div class="auth-logo">GS</div>
-
-        <!-- TABS -->
-
-        <div class="auth-tabs">
-          <button class="auth-tab active" data-tab="login">Вход</button>
-
-          <button class="auth-tab" data-tab="register">Регистрация</button>
+        <div class="footer-bottom">
+          <p>© 2026 PERFUMESITE. Discover your essence.</p>
         </div>
+      </footer>
 
-        <!-- FORMS -->
+      <div class="search-overlay">
+        <div class="search-modal">
+          <div class="search-top">
+            <input
+              type="text"
+              class="global-search-input"
+              placeholder="Найти аромат..."
+            />
 
-        <div class="auth-forms">
-          <!-- LOGIN -->
+            <button class="search-close" type="button" aria-label="Закрыть поиск">✕</button>
+          </div>
 
-          <form class="auth-form active" id="login-form">
-            <h2>С возвращением</h2>
-
-            <p>Войдите в свой аккаунт GS Fragrance</p>
-
-            <!-- EMAIL -->
-
-            <div class="input-group">
-              <input type="email" placeholder="Email" />
-            </div>
-
-            <!-- PASSWORD -->
-
-            <div class="input-group">
-              <input
-                type="password"
-                placeholder="Пароль"
-                class="password-input"
-              />
-
-              <button type="button" class="password-toggle">
-                <!-- OPEN EYE -->
-
-                <svg
-                  class="eye-open"
-                  xmlns="
-                  http://www.w3.org/2000/svg
-                "
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="
-                    M2 12
-                    s3.5-6 10-6
-                    10 6 10 6
-                    -3.5 6-10 6
-                    -10-6-10-6Z
-                  "
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-
-                <!-- CLOSED EYE -->
-
-                <svg
-                  class="eye-closed"
-                  xmlns="
-                  http://www.w3.org/2000/svg
-                "
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M3 3l18 18"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-
-                  <path
-                    d="
-                    M10.6 10.5
-                    a3 3 0 0 0 4 4
-                  "
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <!-- BUTTON -->
-
-            <button type="submit" class="auth-btn">Войти</button>
-          </form>
-
-          <!-- REGISTER -->
-
-          <form class="auth-form" id="register-form">
-            <h2>Создать аккаунт</h2>
-
-            <p>Присоединяйтесь к миру ароматов</p>
-
-            <!-- NAME -->
-
-            <div class="input-group">
-              <input type="text" placeholder="Имя" />
-            </div>
-
-            <!-- EMAIL -->
-
-            <div class="input-group">
-              <input type="email" placeholder="Email" />
-            </div>
-
-            <!-- PASSWORD -->
-
-            <div class="input-group">
-              <input
-                type="password"
-                placeholder="Пароль"
-                class="password-input"
-              />
-
-              <button type="button" class="password-toggle">
-                <!-- OPEN EYE -->
-
-                <svg
-                  class="eye-open"
-                  xmlns="
-                  http://www.w3.org/2000/svg
-                "
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="
-                    M2 12
-                    s3.5-6 10-6
-                    10 6 10 6
-                    -3.5 6-10 6
-                    -10-6-10-6Z
-                  "
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-
-                <!-- CLOSED EYE -->
-
-                <svg
-                  class="eye-closed"
-                  xmlns="
-                  http://www.w3.org/2000/svg
-                "
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M3 3l18 18"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-
-                  <path
-                    d="
-                    M10.6 10.5
-                    a3 3 0 0 0 4 4
-                  "
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <!-- BUTTON -->
-
-            <button type="submit" class="auth-btn">Зарегистрироваться</button>
-          </form>
+          <div class="search-results"></div>
         </div>
       </div>
+
+      <div class="notification"></div>
+
+      <script type="module" src="JS/main.js"></script>
+      <script src="JS/script.js" defer></script>
+      <script src="JS/search.js" defer></script>
+      <script src="JS/auth.js" defer></script>
+      <script src="JS/transitions.js" defer></script>
     </div>
-
-    <!-- =========================
-       NOTIFICATION
-  ========================= -->
-
-    <div class="notification"></div>
-
-    <!-- =========================
-       SCRIPTS
-  ========================= -->
-
-    <script type="module" src="JS/main.js"></script>
-
-    <script src="JS/script.js" defer></script>
-    <script src="JS/search.js" defer></script>
-    <script src="JS/auth.js" defer></script>
-    <script src="JS/transitions.js" defer></script>
   </body>
 </html>

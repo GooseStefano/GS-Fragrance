@@ -4,6 +4,8 @@
   --color-gold: #D4A13A;
   --color-black: #0E0E0C;
   --color-soft-white: #F5F0E8;
+  --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
 
   --bg-color: #0E0E0C;
   --text-color: #F5F0E8;
@@ -12,6 +14,9 @@
   --card-bg: #171613;
   --panel-bg: #141310;
   --panel-bg-strong: #1C1B17;
+  --section-bg: #12110F;
+  --home-panel-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(212, 161, 58, 0.045));
+  --home-card-bg: rgba(255, 255, 255, 0.045);
   --surface-soft: rgba(255, 255, 255, 0.045);
   --surface-hover: rgba(255, 255, 255, 0.075);
   --surface-border: rgba(255, 255, 255, 0.11);
@@ -42,6 +47,7 @@
   --radius-modal: 14px;
   --radius-control: 8px;
   --radius-icon: 8px;
+  --radius-section: 16px;
 
   --shadow-card: 0 18px 42px rgba(0, 0, 0, 0.24);
   --shadow-card-hover: 0 24px 58px rgba(0, 0, 0, 0.32);
@@ -58,6 +64,9 @@ body.light {
   --card-bg: #FFFCF7;
   --panel-bg: #FFFCF7;
   --panel-bg-strong: #FFFFFF;
+  --section-bg: #F8F4EE;
+  --home-panel-bg: linear-gradient(135deg, #FFFCF7, #F1E8DA);
+  --home-card-bg: #FFFCF7;
   --surface-soft: rgba(255, 255, 255, 0.72);
   --surface-hover: rgba(43, 43, 43, 0.055);
   --surface-border: rgba(43, 43, 43, 0.12);

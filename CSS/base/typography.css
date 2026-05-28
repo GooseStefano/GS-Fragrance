@@ -5,10 +5,7 @@ body {
     var(--bg-color);
   color: var(--text-color);
   font-family:
-    "Inter",
-    "Segoe UI",
-    Arial,
-    sans-serif;
+    var(--font-sans);
   font-size: 16px;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
@@ -37,17 +34,17 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(44px, 7vw, 88px);
+  font-size: 72px;
   line-height: 0.96;
 }
 
 h2 {
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: 46px;
   line-height: 1.05;
 }
 
 h3 {
-  font-size: clamp(20px, 2vw, 28px);
+  font-size: 26px;
   line-height: 1.16;
 }
 
@@ -63,4 +60,32 @@ a {
 ::selection {
   background: var(--accent-soft);
   color: var(--heading-color);
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 56px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
 }
