@@ -3,22 +3,69 @@
 }
 
 .category-grid {
-  width: min(var(--container-width), 100%);
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(248px, 1fr));
+  grid-template-areas:
+    "featured men"
+    "featured women"
+    "popular seasonal";
   gap: 20px;
+  align-items: stretch;
+}
+
+.category-card--featured {
+  grid-area: featured;
+}
+
+.category-card--men {
+  grid-area: men;
+}
+
+.category-card--women {
+  grid-area: women;
+}
+
+.category-card--popular {
+  grid-area: popular;
+}
+
+.category-card--seasonal {
+  grid-area: seasonal;
 }
 
 @media (max-width: 1180px) {
   .category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+      "featured featured"
+      "men women"
+      "popular seasonal";
+  }
+}
+
+@media (max-width: 760px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "featured featured"
+      "men women"
+      "popular seasonal";
   }
 }
 
 @media (max-width: 680px) {
   .category-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "featured"
+      "men"
+      "women"
+      "popular"
+      "seasonal";
     gap: 14px;
   }
 }

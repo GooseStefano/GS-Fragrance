@@ -53,6 +53,7 @@
   --shadow-card-hover: 0 24px 58px rgba(0, 0, 0, 0.32);
   --shadow-soft: 0 16px 38px rgba(0, 0, 0, 0.18);
   --container-width: 1440px;
+  --home-content-width: 1560px;
   --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
 }
 

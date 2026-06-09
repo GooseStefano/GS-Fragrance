@@ -41,9 +41,14 @@
               <div class="hero-plinth"></div>
               <div class="hero-branch"></div>
               <img
-                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.38269.2x.avif"
+                src="assets/hero-summer-dark.png"
                 alt=""
-                class="hero-bottle"
+                class="hero-bottle hero-bottle-dark"
+              />
+              <img
+                src="assets/hero-summer-light.png"
+                alt=""
+                class="hero-bottle hero-bottle-light"
               />
             </div>
           </div>
@@ -52,34 +57,29 @@
         <section id="categories" class="categories home-section" aria-labelledby="categories-title">
           <div class="home-section-header">
             <div>
-              <p class="section-kicker">Коллекции</p>
-              <h2 id="categories-title" class="home-section-title">Выберите направление</h2>
+              <p class="section-kicker">Fragrance directions</p>
+              <h2 id="categories-title" class="home-section-title">Коллекции ароматов</h2>
+              <p class="home-section-lead">Найдите аромат по настроению, стилю и характеру композиции.</p>
             </div>
           </div>
 
           <div class="category-grid">
-            <a href="catalog.html?gender=women" class="category-card">
+            <a href="catalog.html?gender=unisex" class="category-card category-card--featured category-card--niche">
               <span class="category-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <path d="M8 8h8l1 12H7L8 8Z" />
-                  <path d="M9.5 8a2.5 2.5 0 0 1 5 0" />
-                  <path d="M12 2v3" />
+                  <path d="M12 3l2.1 4.4L19 9l-3.6 3.5.8 5-4.2-2.4-4.2 2.4.8-5L5 9l4.9-1.6L12 3Z" />
                 </svg>
               </span>
 
               <span class="category-copy">
-                <span class="category-title">Женские ароматы</span>
-                <span class="category-text">Элегантность и чувственность</span>
+                <span class="category-title">Нишевые ароматы</span>
+                <span class="category-text">Редкие композиции с выразительным характером и авторским звучанием.</span>
                 <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
               </span>
 
-              <img
-                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.55883.2x.avif"
-                alt=""
-              />
             </a>
 
-            <a href="catalog.html?gender=men" class="category-card">
+            <a href="catalog.html?gender=men" class="category-card category-card--compact category-card--men">
               <span class="category-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <path d="M8 8h8l1 12H7L8 8Z" />
@@ -94,32 +94,26 @@
                 <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
               </span>
 
-              <img
-                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.31861.2x.avif"
-                alt=""
-              />
             </a>
 
-            <a href="catalog.html?gender=unisex" class="category-card">
+            <a href="catalog.html?gender=women" class="category-card category-card--compact category-card--women">
               <span class="category-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
-                  <path d="M12 3l2.1 4.4L19 9l-3.6 3.5.8 5-4.2-2.4-4.2 2.4.8-5L5 9l4.9-1.6L12 3Z" />
+                  <path d="M8 8h8l1 12H7L8 8Z" />
+                  <path d="M9.5 8a2.5 2.5 0 0 1 5 0" />
+                  <path d="M12 2v3" />
                 </svg>
               </span>
 
               <span class="category-copy">
-                <span class="category-title">Нишевые ароматы</span>
-                <span class="category-text">Уникальные композиции</span>
+                <span class="category-title">Женские ароматы</span>
+                <span class="category-text">Элегантность и чувственность</span>
                 <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
               </span>
 
-              <img
-                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.33519.2x.avif"
-                alt=""
-              />
             </a>
 
-            <a href="catalog.html" class="category-card">
+            <a href="catalog.html" class="category-card category-card--wide category-card--popular">
               <span class="category-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
                   <path d="M12 3l8 4-8 4-8-4 8-4Z" />
@@ -134,10 +128,29 @@
                 <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
               </span>
 
-              <img
-                src="https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.56737.2x.avif"
-                alt=""
-              />
+            </a>
+
+            <a href="catalog.html" class="category-card category-card--wide category-card--seasonal">
+              <span class="category-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v3" />
+                  <path d="M12 19v3" />
+                  <path d="M2 12h3" />
+                  <path d="M19 12h3" />
+                  <path d="M4.2 4.2l2.1 2.1" />
+                  <path d="M17.7 17.7l2.1 2.1" />
+                  <path d="M4.2 19.8l2.1-2.1" />
+                  <path d="M17.7 6.3l2.1-2.1" />
+                </svg>
+              </span>
+
+              <span class="category-copy">
+                <span class="category-title">Сезонные ароматы</span>
+                <span class="category-text">Подборки под настроение, погоду и время года</span>
+                <span class="category-link">Смотреть <span aria-hidden="true">→</span></span>
+              </span>
+
             </a>
           </div>
         </section>

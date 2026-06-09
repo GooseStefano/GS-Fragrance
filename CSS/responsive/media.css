@@ -79,6 +79,14 @@
   }
 }
 
+@media (max-width: 680px) {
+  .category-card {
+    background-position:
+      var(--category-photo-mobile-position),
+      center;
+  }
+}
+
 @media (max-width: 380px) {
   .profile-btn {
     display: none;
